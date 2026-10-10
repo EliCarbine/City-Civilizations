@@ -163,7 +163,7 @@ namespace CitizenSoul
     public struct SoulMemory : IBufferElementData, ISerializable
     {
         public uint m_Day;
-        public SoulEventKind m_Kind; // byte-sized enum
+        public SoulEventKind m_Kind; // small enum (ushort since M5j)
         public short m_Value;        // magnitude (affinity delta, severity, ...)
         public Entity m_Subject;     // who it was about (Entity.Null for solo events)
 
@@ -171,7 +171,7 @@ namespace CitizenSoul
         {
             writer.Write(SoulConsts.ComponentVersion);
             writer.Write(m_Day);
-            writer.Write((byte)m_Kind);
+            writer.Write((ushort)m_Kind);
             writer.Write(m_Value);
             writer.Write(m_Subject);
         }
@@ -185,7 +185,7 @@ namespace CitizenSoul
                 SoulLog.Once("memory.version", "SoulMemory read with version " + version + " > known " + SoulConsts.ComponentVersion);
             }
             reader.Read(out m_Day);
-            byte kind;
+            ushort kind;
             reader.Read(out kind);
             m_Kind = (SoulEventKind)kind;
             reader.Read(out m_Value);
@@ -205,7 +205,7 @@ namespace CitizenSoul
         {
             writer.Write(SoulConsts.ComponentVersion);
             writer.Write(m_Day);
-            writer.Write((byte)m_Kind);
+            writer.Write((ushort)m_Kind);
             writer.Write(m_Value);
             writer.Write(m_Subject);
         }
@@ -219,7 +219,7 @@ namespace CitizenSoul
                 SoulLog.Once("journal.version", "SoulJournalEntry read with version " + version + " > known " + SoulConsts.ComponentVersion);
             }
             reader.Read(out m_Day);
-            byte kind;
+            ushort kind;
             reader.Read(out kind);
             m_Kind = (SoulEventKind)kind;
             reader.Read(out m_Value);

@@ -4,7 +4,7 @@ using Unity.Entities;
 namespace CitizenSoul
 {
     /// <summary>Kinds of life events recorded in soul memory + the journal ring.</summary>
-    public enum SoulEventKind : byte
+    public enum SoulEventKind : ushort
     {
         None = 0,
         Born = 1,        // soul initialized
@@ -252,6 +252,37 @@ namespace CitizenSoul
         PlantDrive = 233,        // F116: joined the planting drive
         TreeFight = 234,         // F116: fought for the old tree
         TreeSaved = 235,         // F116: kept the old tree standing
+        RitualOn = 236,          // F117: started running on lucky rituals
+        LuckyWin = 237,          // F117: the lucky ritual came through
+        RitualBlame = 238,       // F117: blamed it when the day went sideways
+        RitualShared = 239,      // F117: a friend picked up the ritual
+        CollectOn = 240,         // F118: started a little collection
+        CollectFind = 241,       // F118: found another piece
+        CollectMiss = 242,       // F118: a piece got away
+        SetDone = 243,           // F118: the set was completed
+        FearOn = 244,            // F119: named the big fear
+        FearFreeze = 245,        // F119: froze when it got close
+        FearRoute = 246,         // F119: took the long way around it
+        ExposureArc = 247,       // F119: a friend helped them face it
+        FearShrunk = 248,        // F119: the fear finally shrank
+        PhraseCoin = 249,        // F120: coined a catchphrase
+        Nickname = 250,          // F120: gave a friend a nickname
+        PhraseSpread = 251,      // F120: the catchphrase came around again
+        SlangCity = 252,         // F120: the phrase went city-wide
+        StatOn = 253,            // F121: started keeping little stats
+        StatQuote = 254,         // F121: quoted a stat from the notebook
+        StatArchive = 255,       // F121: the notebooks joined the city archive
+        ListOn = 256,            // F122: built a little system for the morning
+        ListWin = 257,           // F122: the system worked all week
+        ListChaos = 258,         // F122: the system broke, laughed about it
+        CharmOn = 259,           // F123: picked a comfort object
+        CharmCalm = 260,         // F123: the charm did its quiet job
+        CharmLost = 261,         // F123: the charm went missing
+        CharmBack = 262,         // F123: the charm came back
+        TradOn = 263,            // F124: started a private tradition
+        TradKeep = 264,          // F124: kept the tradition this year
+        TradShared = 265,        // F124: loved ones joined the tradition
+        TradBreak = 266,         // F124: the tradition broke
         }
 
     /// <summary>Quirk bits packed into SoulPersonality.m_Quirk.</summary>
