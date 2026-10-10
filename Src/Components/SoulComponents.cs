@@ -21,7 +21,7 @@ namespace CitizenSoul
         // M1 vitals (append-only: existing byte values stay save-stable)
         SleptWell = 12,     // exceptional night's rest
         SleptBad = 13,      // rough night, little rest
-        Meditated = 14,
+        Meditated = 14,      // mind reached (or held) its calm
 
         // --- M2 (F01-F04): the romance arc ---------------------------------
         CrushFormed = 15,
@@ -30,7 +30,19 @@ namespace CitizenSoul
         Married = 18,
         Widowed = 19,
         Heartbroken = 20,
-        Anniversary = 21      // mind reached (or held) its calm
+        Anniversary = 21,    // one year since the wedding
+
+        // --- M2 adjuncts: firsts, work spouses, birthdays, secrets, feuds, wingmen ---
+        WorkSpouse = 22,        // F26: a colleague bond matured into a trusted partner
+        Birthday = 23,          // F42: another year older
+        BirthdayParty = 24,     // F42: cake at a friend's place
+        FirstCloseFriend = 25,  // F08: the first true-blue close friend
+        FirstCrush = 26,        // F08: the first spark, ever
+        Confided = 27,          // F52: a secret shared between confidants
+        FeudStarted = 28,       // F53: a rivalry hardened into an outright feud
+        FeudClash = 29,         // F53: a run-in between feuders
+        Reconciled = 30,        // F53: two enemies finally let a grudge go
+        WingmanAssist = 31      // F55: a friend nudged two crushes together
         }
 
     /// <summary>Quirk bits packed into SoulPersonality.m_Quirk.</summary>

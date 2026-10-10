@@ -51,11 +51,12 @@ namespace CitizenSoul
 
         // --- edge change-mask bits (must match SoulEdgeUtil.ApplyThresholds) ---
         public const byte ChangeBefriended = 1;
+        public const byte ChangeClose = 2;      // becameclose (bit 2): the bond crossed the close line
         public const byte ChangeFellOut = 4;
         public const byte ChangeRival = 8;
 
         // --- vitals: sleep / meditation / fitness (M1) ---
-        public const int VitStartEnergy = 200;
+        public const int VitStartEnergy = 200;          // newly-minted souls are rested
 
         // --- M2: romance arc (F01-F04) -------------------------------------
         public const int CrushChancePerMille = 30;  // daily odds once the closest friend is mutual
@@ -65,7 +66,7 @@ namespace CitizenSoul
         public const int IntimacyEngage = 220;      // courting -> engaged
         public const int IntimacyWed = 250;         // engaged -> married
         public const int IntimacyPerDay = 6;        // growth on each romance day
-        public const int AnniversaryDays = 400;     // game days between anniversaries          // newly-minted souls are rested
+        public const int AnniversaryDays = 400;     // game days between anniversaries
         public const int VitStartCalm = 110;
         public const int EnergyDrainPerDay = 50;        // living costs energy; sleep restores it
         public const int SleepMaxRestore = 100;         // restore at perfect quality 255; ~50 at neutral 128
@@ -95,6 +96,52 @@ namespace CitizenSoul
         public const int TrainXp = 8;                   // a bit more than a workday's learning
         public const int TrainEnergyCost = 14;
         public const int TrainMinEnergy = 40;           // too spent to train
+
+        // --- M2 adjuncts (F08/F26/F42/F52/F53/F55) -------------------------
+        public const int WorkSpouseMood = 4;            // a trusted ally at work lifts the day
+        public const int FeudFloor = -75;               // affinity at or below can harden into a feud
+        public const int FeudMinMoments = 4;            // a feud needs a history, not one bad day
+        public const int FeudClashDrag = 2;             // every run-in pulls feuders down a notch
+        public const int FeudClashNotePerMille = 200;   // and sometimes makes the journal
+        public const int FeudMood = -6;                 // the day a feud hardens
+        public const int FeudClashMood = -4;            // a brush with the enemy sours the day
+        public const int ReconcileChancePerMille = 5;   // daily odds an enemy lets it go
+        public const int ReconcileLift = 25;            // a grudge lifted leaves room to breathe
+        public const int ReconcileMood = 3;             // relief
+        public const int ConfideChancePerMille = 20;    // daily odds a close friend shares a secret
+        public const int ConfideDelta = 4;              // secrets bind
+        public const int ConfideMood = 2;
+        public const int WingmanChancePerMille = 30;    // daily odds a friend plays matchmaker
+        public const int WingmanBump = 2;               // each nudge warms the pair
+        public const int BirthdayDays = 360;            // game days between birthdays
+        public const int PartyAttendPerMille = 300;     // odds a friend drops by
+        public const int PartyGuestCap = 6;             // a party, not a festival
+        public const int BirthdayMoodSelf = 5;          // turned another year with people around
+        public const int BirthdayMoodQuiet = 1;         // a quiet birthday still counts
+        public const int BirthdayMoodGuest = 2;         // cake at a friend's place
+        public const int FirstCloseMood = 8;            // F08: the first true-blue friend
+        public const int FirstCrushMood = 7;
+
+    // --- F26 workplace web ----------------------------------------------------
+    public const int WorkSpouseGainPerMille = 8;      // per-mille/day a close colleague edge celebrates
+    public const int WorkSpouseMinMoments = 8;        // minimum shared moments before a work spouse can form
+    public const int ToxicityAffinity = -40;          // colleague edge at or below this is a toxic coworker
+    public const int ToxicMoodChancePerMille = 30;    // per-mille/day a toxic coworker sours the office
+    public const int ToxicMood = -3;
+
+    // --- F42 birthdays ----------------------------------------------------------
+    public const int BirthdayPartyPerMille = 120;     // chance a birthday becomes a party vs a quiet day
+    public const int BirthdayForgetMood = -3;         // mood ding when you forget a close friend's birthday
+    public const int BirthdayForgetDrag = -2;         // affinity drag with the friend you forgot
+
+    // --- F52 confidences --------------------------------------------------------
+    public const int LeakChancePerMille = 2;          // per-mille/day a held confidence leaks
+    public const int LeakMood = -8;                   // mood hit when your confidence leaks
+    public const int LeakDelta = -20;                 // affinity hit with the confidant who leaked
+
+    // --- F55 wingmen & matchmakers ---------------------------------------------
+    public const int MatchmakerExtraversion = 180;    // extraversion (0..255) at which a soul matchmakes
+    public const int WingmanMood = 2;                 // mood lift from a pep talk / set-up
     }
 
     /// <summary>Shared one-liners so systems don't each reinvent mood/memory writes.</summary>

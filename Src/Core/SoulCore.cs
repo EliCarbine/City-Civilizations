@@ -52,6 +52,7 @@ namespace CitizenSoul
         public const int DecayLanes = 32;
         public const int JournalLanes = 32;
         public const int VitalsLanes = 128;
+        public const int DramaLanes = 64;       // M2 adjunct drama lane (F08/F26/F42/F52/F53/F55)
     }
 
     /// <summary>Pure integer math — no Unity.Mathematics dependency, fully unit-testable.</summary>

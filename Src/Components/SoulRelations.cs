@@ -49,6 +49,8 @@ namespace CitizenSoul
         public const byte Family = 1 << 3;
         public const byte Rival = 1 << 4;
         public const byte Colleague = 1 << 5;
+        public const byte Feud = 1 << 6;        // M2 F53: a rivalry hardened by time
+        public const byte Confidant = 1 << 7;   // M2 F52: a secret was shared
 
         public static bool Has(byte flags, byte bit) { return (flags & bit) != 0; }
 

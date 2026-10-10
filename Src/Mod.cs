@@ -27,8 +27,9 @@ namespace CitizenSoul
             updateSystem.UpdateAfter<InjurySystem, SoulInitializeSystem>(SystemUpdatePhase.ModificationEnd);
             updateSystem.UpdateAfter<VitalsSystem, SoulInitializeSystem>(SystemUpdatePhase.ModificationEnd);
             updateSystem.UpdateAfter<RomanceSystem, VitalsSystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<DramaSystem, RomanceSystem>(SystemUpdatePhase.ModificationEnd);
 
-            SoulLog.Info("Citizen Soul loaded: 11 systems registered.");
+            SoulLog.Info("Citizen Soul loaded: 12 systems registered.");
         }
 
         public void OnDispose()
