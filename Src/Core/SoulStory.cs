@@ -156,6 +156,24 @@ case SoulEventKind.Comeback: return "made it back on the field";
 case SoulEventKind.LastSeason: return "announced a last season";
 case SoulEventKind.SportRetired: return "hung the boots up";
 case SoulEventKind.SportStageUp: return "moved up a rung in their sport";
+case SoulEventKind.BookClubJoined: return "joined a book club";
+case SoulEventKind.BookClubSchism: return "watched the club split over an ending";
+case SoulEventKind.NightClass: return "started night classes";
+case SoulEventKind.CohortBond: return "the class cohort became friends";
+case SoulEventKind.LanguageFluency: return "got fluent in a second language";
+case SoulEventKind.TranslatedForKin: return "translated for the family";
+case SoulEventKind.MuseumVisit: return "spent an afternoon at the museum";
+case SoulEventKind.GalleryOpening: return "went to a gallery opening";
+case SoulEventKind.TriviaNight: return "made it a trivia night";
+case SoulEventKind.BoardGameFeud: return "let a board game end a friendship";
+case SoulEventKind.Stargazing: return "spent an evening under the stars";
+case SoulEventKind.MeteorShower: return "watched the meteor shower";
+case SoulEventKind.TelescopeGift: return "got a telescope for a birthday";
+case SoulEventKind.LateNightTalk: return "talked past midnight";
+case SoulEventKind.GreatArgument: return "argued well, and kept a friend";
+case SoulEventKind.ApprenticeJoined: return "signed on with a master";
+case SoulEventKind.MasteryDay: return "passed mastery day";
+case SoulEventKind.Noticed: return "noticed something small and lovely";
                 default: return "something stirred";
             }
         }

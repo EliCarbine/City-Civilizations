@@ -152,6 +152,24 @@ namespace CitizenSoul
         LastSeason = 135,        // M5e F81: the veteran's last season
         SportRetired = 136,      // M5e F81: hung the boots up
         SportStageUp = 137,      // M5e F72-F79: another rung on the ladder
+        BookClubJoined = 138,    // M5f F82: in with the library crowd
+        BookClubSchism = 139,    // M5f F82: the club split over an ending
+        NightClass = 140,        // M5f F83: evening courses after work
+        CohortBond = 141,        // M5f F83: the class became friends
+        LanguageFluency = 142,   // M5f F84: a second tongue, fluent
+        TranslatedForKin = 143,  // M5f F84: spoke for the grandparents
+        MuseumVisit = 144,       // M5f F85: an afternoon among exhibits
+        GalleryOpening = 145,    // M5f F85: the opening-night crowd
+        TriviaNight = 146,       // M5f F86: trivia, taken seriously
+        BoardGameFeud = 147,     // M5f F86: a board game ended a friendship
+        Stargazing = 148,        // M5f F87: an evening under the stars
+        MeteorShower = 149,      // M5f F87: the shower, watched from a roof
+        TelescopeGift = 150,     // M5f F87: a telescope for a birthday
+        LateNightTalk = 151,     // M5f F88: a talk that ran past midnight
+        GreatArgument = 152,     // M5f F88: a good argument, a better friend
+        ApprenticeJoined = 153,  // M5f F89: signed on with a master
+        MasteryDay = 154,        // M5f F89: the day the master said so
+        Noticed = 155,           // M5f F90: small wonder, noted
         }
 
     /// <summary>Quirk bits packed into SoulPersonality.m_Quirk.</summary>

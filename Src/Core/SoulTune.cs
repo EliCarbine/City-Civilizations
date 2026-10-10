@@ -485,6 +485,55 @@ namespace CitizenSoul
     public const int SportKidQuitMood = -8;
     public const int SportLastSeasonMood = -6;        // the body starts saying no
     public const int SportRetireMood = -10;
+
+    // -- M5f: learning & curiosity (F82-F90) --
+    public const int CurioMinAgeDays = 2190;          // ~6 years: old enough to wonder
+    public const int CurioTeenDays = 4380;            // ~12 years: late-night talks begin
+    public const int CurioAdultDays = 6570;           // ~18 years: classes and masteries
+    public const int CurioPickPerMille = 18;          // daily chance a soul finds its hunger
+    public const int CurioPickMood = 5;               // something clicked
+    public const int CurioSessionPerMille = 60;       // daily chance of an evening at it
+    public const int CurioSessionMood = 3;            // quiet joy of practice
+    public const int CurioDepthGrow = 2;              // depth per evening
+    public const int CurioClubMinSessions = 6;        // club nights before a schism can split it
+    public const int CurioSchismMood = -10;           // the ending ruined it
+    public const int CurioSchismBump = -4;
+    public const int CurioCohortSessions = 6;         // evenings until a cohort bonds
+    public const int CurioCohortMood = 8;
+    public const int CurioCohortBump = 5;
+    public const int CurioFluencyDepth = 40;          // the second tongue turns fluent
+    public const int CurioFluencyMood = 12;
+    public const int CurioTranslateBump = 3;          // speaking for the grandparents
+    public const int CurioTranslateMood = 6;
+    public const int CurioTranslateWindowDays = 60;   // kid translation windows
+    public const int CurioTranslatePerMille = 250;
+    public const int CurioMuseumMood = 5;             // a good afternoon indoors
+    public const int CurioAnnualMuseumPerMille = 300; // once-a-year visitors too
+    public const int CurioAnnualMuseumGateDays = 100; // their cadence
+    public const int CurioGalleryPerMille = 300;      // odds at each gallery window
+    public const int CurioGalleryMood = 8;
+    public const int CurioGalleryBump = 4;
+    public const int CurioTriviaSessions = 5;         // nights until the team is real
+    public const int CurioTriviaMood = 6;
+    public const int CurioFeudPerMille = 150;         // odds at each board-game window
+    public const int CurioFeudMood = -12;
+    public const int CurioFeudBump = -10;             // monopoly, canonically
+    public const int CurioStarMood = 7;               // the sky, quietly
+    public const int CurioMeteorMood = 14;            // the shower, citywide
+    public const int CurioTelescopeMood = 15;         // the gift that is remembered
+    public const int CurioTelescopeMaxDays = 5475;    // ~15 years: birthdays stop being telescopes
+    public const int CurioTalkMood = 6;               // dorm-room philosophy
+    public const int CurioArgueSessions = 8;          // talks before the great argument
+    public const int CurioArgueMood = 10;
+    public const int CurioArgueBump = 10;             // a good argument makes a friend
+    public const int CurioMasteryDepth = 90;          // where mastery lives
+    public const int CurioMasterySessions = 30;       // and how many evenings it costs
+    public const int CurioMasteryMood = 20;           // the master said so
+    public const int CurioMasteryBump = 8;
+    public const int CurioPartnerMinAffinity = 25;    // social tracks need a familiar face
+    public const int CurioPartnerBump = 4;
+    public const int CurioNoticePerMille = 30;        // small wonder happens
+    public const int CurioNoticeMood = 3;
     }
 
     /// <summary>Shared one-liners so systems don't each reinvent mood/memory writes.</summary>
