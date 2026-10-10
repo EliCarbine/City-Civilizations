@@ -101,6 +101,33 @@ namespace CitizenSoul
         WishFormed = 84,         // M5c: set their heart on something
         WishFulfilled = 85,      // M5c: chased a wish down
         WishFaded = 86,          // M5c: let an old wish go
+        TalentUnlocked = 87,     // M5d F62: a gift nobody knew was there
+        GiftBentLife = 88,       // M5d F62: the craft quietly became the life
+        BuskStarted = 89,        // M5d F64: first afternoon on the corner
+        StreetLegend = 90,       // M5d F64: the corner knows their name
+        BandFormed = 91,         // M5d F63: two souls started making noise
+        BandGig = 92,            // M5d F63: a proper show, small room
+        BandBreakup = 93,        // M5d F63: the band fell apart
+        BreakoutAct = 94,        // M5d F63: out of the small rooms
+        BookFinished = 95,       // M5d F65: first manuscript done
+        BookPublished = 96,      // M5d F65: their name in print
+        Bestseller = 97,         // M5d F65: the whole city read it
+        WritersGroup = 98,       // M5d F65: found a circle of writers
+        MuralDone = 99,          // M5d F66: paint on the city's walls
+        ArtCommission = 100,     // M5d F66: painted for paying strangers
+        PhotoExhibit = 101,      // M5d F67: prints hung in public
+        OpeningNight = 102,      // M5d F68: the first curtain
+        StageFright = 103,       // M5d F68: the lights were too bright
+        Ovation = 104,           // M5d F68: standing ovation
+        ShortFilm = 105,         // M5d F69: first short finished
+        FilmViral = 106,         // M5d F69: a clip went around
+        CraftFair = 107,         // M5d F70: sold at the street fair
+        HandmadeGift = 108,      // M5d F70: made by hand, just for them
+        Heirloom = 109,          // M5d F70: made to outlast them
+        DancePartner = 110,      // M5d F71: someone to dance with
+        DanceComp = 111,         // M5d F71: danced before judges
+        FirstDance = 112,        // M5d F71: the wedding dance
+        ArtStageUp = 113,        // M5d F62: a step up in the craft
         }
 
     /// <summary>Quirk bits packed into SoulPersonality.m_Quirk.</summary>
