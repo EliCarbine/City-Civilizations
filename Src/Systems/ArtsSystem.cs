@@ -19,6 +19,9 @@ namespace CitizenSoul
         private const int MigrateBudget = 64;
         private const int FaultLogCap = 4;
 
+        /// <summary>128 lanes -> 1 pass/citizen/day.</summary>
+        protected override int Lanes { get { return ArtsLanes; } }
+
         private EntityQuery m_Arts;
         private EntityQuery m_All;
 

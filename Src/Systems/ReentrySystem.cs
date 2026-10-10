@@ -16,6 +16,9 @@ namespace CitizenSoul
     public partial class ReentrySystem : SoulSystemBase
     {
         private const int ReentryLanes = 128;
+
+        /// <summary>128 lanes -> 1 pass/citizen/day.</summary>
+        protected override int Lanes { get { return ReentryLanes; } }
         private const int MigrateBudget = 64;
         private const int FaultLogCap = 4;
 

@@ -16,6 +16,9 @@ namespace CitizenSoul
     public partial class MidlifeSystem : SoulSystemBase
     {
         private const int MidlifeLanes = 128;
+
+        /// <summary>128 lanes -> 1 pass/citizen/day.</summary>
+        protected override int Lanes { get { return MidlifeLanes; } }
         private const int MigrateBudget = 64;
         private const int FaultLogCap = 4;
         private const int WishSlots = 4;

@@ -128,6 +128,30 @@ namespace CitizenSoul
         DanceComp = 111,         // M5d F71: danced before judges
         FirstDance = 112,        // M5d F71: the wedding dance
         ArtStageUp = 113,        // M5d F62: a step up in the craft
+        CrewFormed = 114,        // M5e F72: found a regular crew
+        PickupLegend = 115,      // M5e F72: ran the court all summer
+        LeagueJoined = 116,      // M5e F73: signed with a district team
+        LeagueChamp = 117,       // M5e F73: won the district title
+        RunStarted = 118,        // M5e F74: started running mornings
+        Marathon = 119,          // M5e F74: went the whole marathon
+        DojoJoined = 120,        // M5e F75: bowed into the dojo
+        Knockout = 121,          // M5e F75: a hard night on the canvas
+        LANChamp = 122,          // M5e F76: took the LAN crown
+        ParkMatch = 123,         // M5e F77: chess in the park
+        NemesisMet = 124,        // M5e F77: a rival across the board
+        KidSportStart = 125,     // M5e F78: first season on the field
+        KidScouted = 126,        // M5e F78: scouts noticed the kid
+        KidQuit = 127,           // M5e F78: put the cleats away
+        TitleRun = 128,          // M5e F79: a deep run in the playoffs
+        TitleWon = 129,          // M5e F79: brought the title home
+        ParadeDay = 130,         // M5e F79: rode the parade route
+        DerbyDay = 131,          // M5e F80: derby day in the stands
+        SplitFamily = 132,       // M5e F80: took sides over the derby
+        SportInjury = 133,       // M5e F81: a knock on the field
+        Comeback = 134,          // M5e F81: back on the field
+        LastSeason = 135,        // M5e F81: the veteran's last season
+        SportRetired = 136,      // M5e F81: hung the boots up
+        SportStageUp = 137,      // M5e F72-F79: another rung on the ladder
         }
 
     /// <summary>Quirk bits packed into SoulPersonality.m_Quirk.</summary>
