@@ -21,7 +21,16 @@ namespace CitizenSoul
         // M1 vitals (append-only: existing byte values stay save-stable)
         SleptWell = 12,     // exceptional night's rest
         SleptBad = 13,      // rough night, little rest
-        Meditated = 14      // mind reached (or held) its calm
+        Meditated = 14,
+
+        // --- M2 (F01-F04): the romance arc ---------------------------------
+        CrushFormed = 15,
+        CourtStarted = 16,
+        Engaged = 17,
+        Married = 18,
+        Widowed = 19,
+        Heartbroken = 20,
+        Anniversary = 21      // mind reached (or held) its calm
         }
 
     /// <summary>Quirk bits packed into SoulPersonality.m_Quirk.</summary>
@@ -327,6 +336,52 @@ namespace CitizenSoul
             }
             reader.Read(out m_Counter);
             reader.Read(out m_RollHash);
+            reader.Read(out m_LastDay);
+        }
+    }
+
+    /// <summary>
+    /// The romance arc (F01-F04). Stage: 0 single, 1 crush, 2 courting,
+    /// 3 engaged, 4 married. Partner is Null while unbound. Intimacy is the
+    /// slow currency of the arc; LastDay is the last day its pass ran.
+    /// </summary>
+    public struct SoulRomance : IComponentData, ISerializable
+    {
+        public Entity m_Partner;   // bound partner once engaged (Null while unbound)
+        public byte m_Stage;       // 0 single .. 4 married
+        public byte m_Intimacy;    // 0-255: the slow currency of the arc
+        public uint m_SinceDay;    // day the current stage began
+        public uint m_LastDay;     // last day this soul ran its romance pass
+
+        public static SoulRomance Fresh(uint day)
+        {
+            SoulRomance r = default(SoulRomance);
+            r.m_LastDay = day;
+            return r;
+        }
+
+        public void Serialize<TWriter>(TWriter writer) where TWriter : IWriter
+        {
+            writer.Write(SoulConsts.ComponentVersion);
+            writer.Write(m_Partner);
+            writer.Write(m_Stage);
+            writer.Write(m_Intimacy);
+            writer.Write(m_SinceDay);
+            writer.Write(m_LastDay);
+        }
+
+        public void Deserialize<TReader>(TReader reader) where TReader : IReader
+        {
+            byte version;
+            reader.Read(out version);
+            if (version > SoulConsts.ComponentVersion)
+            {
+                SoulLog.Once("romance.version", "SoulRomance read with version " + version + " > known " + SoulConsts.ComponentVersion);
+            }
+            reader.Read(out m_Partner);
+            reader.Read(out m_Stage);
+            reader.Read(out m_Intimacy);
+            reader.Read(out m_SinceDay);
             reader.Read(out m_LastDay);
         }
     }

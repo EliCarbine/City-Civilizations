@@ -55,7 +55,17 @@ namespace CitizenSoul
         public const byte ChangeRival = 8;
 
         // --- vitals: sleep / meditation / fitness (M1) ---
-        public const int VitStartEnergy = 200;          // newly-minted souls are rested
+        public const int VitStartEnergy = 200;
+
+        // --- M2: romance arc (F01-F04) -------------------------------------
+        public const int CrushChancePerMille = 30;  // daily odds once the closest friend is mutual
+        public const int CrushMinAffinity = 40;     // closeness floor for a crush to form
+        public const int IntimacyCrush = 10;        // a fresh spark
+        public const int IntimacyCourt = 120;       // spark -> courting
+        public const int IntimacyEngage = 220;      // courting -> engaged
+        public const int IntimacyWed = 250;         // engaged -> married
+        public const int IntimacyPerDay = 6;        // growth on each romance day
+        public const int AnniversaryDays = 400;     // game days between anniversaries          // newly-minted souls are rested
         public const int VitStartCalm = 110;
         public const int EnergyDrainPerDay = 50;        // living costs energy; sleep restores it
         public const int SleepMaxRestore = 100;         // restore at perfect quality 255; ~50 at neutral 128
