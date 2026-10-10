@@ -228,6 +228,25 @@ namespace CitizenSoul
     public const int MournTrauma = 10;                // trauma of losing someone close
     public const int MemorialAnnivMood = -8;          // mood hit on a passing's anniversary
     public const int RegistryCap = 64;                // passings remembered in the registry
+
+    // --- M5a: family & dynasty (F05-F10, F60) ---
+    public const int FamilyLinkWindowDays = 6;              // days after birth when parents can still be linked
+    public const int FamilyLinkGiveUpDays = 12;              // days after birth when unresolved souls settle as founders
+    public const int FamilyStartGrace = 2;                  // install grace: souls born this close to tracking start are legacy
+    public const int ParentMood = 8;                        // mood for a parent greeting a new child
+    public const int AffairColdIntimacy = 30;                // intimacy at or below which a spouse may stray
+    public const int AffairTryPerMille = 10;                 // per-mille daily chance a cold spouse strays
+    public const int AffairMinAffinity = 55;                 // minimum edge affinity for an affair partner
+    public const int AffairDiscoverPerMille = 90;            // per-mille daily chance an affair is discovered
+    public const int AffairThrillMood = 6;                  // mood for the straying spouse
+    public const int AffairSpouseMood = -22;                  // mood for the betrayed spouse
+    public const int AffairGuiltMood = -10;                   // mood for the straying spouse after discovery
+    public const int DivorceMinDays = 30;                    // minimum days married before divorce can trigger
+    public const int DivorceColdIntimacy = 10;               // intimacy at or below which divorce can trigger
+    public const int DivorceColdPerMille = 60;               // per-mille daily chance of divorce while cold
+    public const int DivorceMood = -12;                       // mood at divorce
+    public const int GrandHelpPerMille = 300;                 // per-mille daily chance a grandparent helps with grandkids
+    public const int GrandHelpMood = 4;                     // mood from grandparent time
     }
 
     /// <summary>Shared one-liners so systems don't each reinvent mood/memory writes.</summary>

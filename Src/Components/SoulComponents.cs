@@ -69,7 +69,12 @@ namespace CitizenSoul
         Released = 53,          // F35: back, changed
         PetAdopted = 54,        // F47: a warm anchor at home
         PetDied = 55,           // F47: the anchor slipped
-        Reunited = 56           // F61: old friends meet again after a long spell apart
+        Reunited = 56,          // F61: old friends meet again after a long spell apart
+        AffairStarted = 57,     // M5a: a wandering heart strays
+        AffairDiscovered = 58,  // M5a: the truth comes out
+        Divorced = 59,          // M5a: the marriage ends
+        BecameParent = 60,      // M5a: a child joins the family
+        Grandfamily = 61        // M5a: time spent with grandchildren
         }
 
     /// <summary>Quirk bits packed into SoulPersonality.m_Quirk.</summary>

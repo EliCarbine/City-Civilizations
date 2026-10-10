@@ -75,6 +75,11 @@ namespace CitizenSoul
                 case SoulEventKind.PetAdopted: return "brought home a companion";
                 case SoulEventKind.PetDied: return "said goodbye to a pet";
                 case SoulEventKind.Reunited: return "ran into an old friend after " + value + " days";
+case SoulEventKind.AffairStarted: return "started something they shouldn't have";
+case SoulEventKind.AffairDiscovered: return "got caught living a lie";
+case SoulEventKind.Divorced: return "signed the papers and walked away";
+case SoulEventKind.BecameParent: return "welcomed a child into the family";
+case SoulEventKind.Grandfamily: return "spent the day with the grandchildren";
                 default: return "something stirred";
             }
         }
