@@ -170,6 +170,30 @@ namespace CitizenSoul
         ApprenticeJoined = 153,  // M5f F89: signed on with a master
         MasteryDay = 154,        // M5f F89: the day the master said so
         Noticed = 155,           // M5f F90: small wonder, noted
+        PhoneFight = 156,        // M5g F91: the always-on-the-phone fight
+        Scrolling = 157,         // M5g F91: an evening lost to the feed
+        Posted = 158,            // M5g F92: a post goes out
+        ViralPost = 159,         // M5g F92: the post that ran the town
+        ChatFormed = 160,        // M5g F93: the group chat comes alive
+        ChatJoke = 161,          // M5g F93: an inside joke leaks out
+        ChatQuiet = 162,         // M5g F93: the chat went silent
+        LeftOnRead = 163,        // M5g F93: left on read
+        BingeNight = 164,        // M5g F94: one more episode
+        WatchParty = 165,        // M5g F94: everyone over for the finale
+        SpoilerCrime = 166,      // M5g F94: spoiled it
+        EveryoneWatching = 167,  // M5g F94: the show the whole city follows
+        NewGadget = 168,         // M5g F95: first in line
+        GadgetGrumble = 169,     // M5g F95: newfangled nonsense
+        TechAbstain = 170,       // M5g F95: still no phone
+        TechEra = 171,           // M5g F95: the streets change again
+        RemoteWork = 172,        // M5g F96: work from the café
+        LonelyRemote = 173,      // M5g F96: the office web thinned
+        ArcadeNight = 174,       // M5g F97: ranked night at the arcade
+        ArcadeKid = 175,         // M5g F97: the kid nobody beats
+        ArcadeClosed = 176,      // M5g F97: the arcade shut its doors
+        ForumJoined = 177,       // M5g F98: found the forums
+        ForumFriend = 178,       // M5g F98: an unlikely friendship
+        DigitalLegacy = 179,     // M5g F99: the posts will outlive them
         }
 
     /// <summary>Quirk bits packed into SoulPersonality.m_Quirk.</summary>

@@ -534,6 +534,47 @@ namespace CitizenSoul
     public const int CurioPartnerBump = 4;
     public const int CurioNoticePerMille = 30;        // small wonder happens
     public const int CurioNoticeMood = 3;
+
+    // -- M5g: technology & modern life (F91-F99) --
+    public const int TechScreenFormPerMille = 20;     // heavy screen habit forms
+    public const int TechScreenMood = -3;             // a lost evening
+    public const int TechPhoneFightPerMille = 250;    // odds at each phone-fight window
+    public const int TechPhoneFightBump = -6;
+    public const int TechPostPerMille = 25;           // daily odds of a post
+    public const int TechPostFollowerGain = 2;        // organic followers per post
+    public const int TechViralPerMille = 4;           // the post that runs the town
+    public const int TechViralFollowers = 50;
+    public const int TechViralMood = 18;
+    public const int TechChatWindowDays = 45;         // group-chat cadence
+    public const int TechChatMood = 5;
+    public const int TechChatQuietBump = -4;
+    public const int TechChatQuietMood = -5;
+    public const int TechReadMood = -4;
+    public const int TechBingeFormPerMille = 15;      // the habit sets in
+    public const int TechBingeMood = 6;
+    public const int TechWatchPartyBump = 3;
+    public const int TechWatchPartyMood = 7;
+    public const int TechSpoilerPerMille = 100;       // odds at each spoiler window
+    public const int TechSpoilerBump = -6;
+    public const int TechSpoilerMood = -8;
+    public const int TechEveryoneMood = 6;            // the whole city watching
+    public const int TechGadgetMood = 8;              // first in line
+    public const int TechGrumbleMood = -3;            // newfangled nonsense
+    public const int TechAbstainMood = 2;             // quietly unmoved
+    public const int TechEraMood = 4;                 // the streets change again
+    public const int TechRemoteFormPerMille = 250;    // odds at each remote window
+    public const int TechRemoteMood = 5;
+    public const int TechLonelyMood = -8;             // the office web thinned
+    public const int TechArcadeMinAgeDays = 2190;     // old enough for cabinets
+    public const int TechArcadeMood = 7;
+    public const int TechArcadeKidMood = 10;
+    public const int TechArcadeCloseMood = -10;
+    public const int TechForumBump = 4;
+    public const int TechForumMood = 6;
+    public const int TechForumVisitPerMille = 100;
+    public const int TechForumVisitBump = 6;
+    public const int TechLegacyAgeDays = 32850;       // ~90 years: the archive speaks
+    public const int TechLegacyMood = 4;
     }
 
     /// <summary>Shared one-liners so systems don't each reinvent mood/memory writes.</summary>
