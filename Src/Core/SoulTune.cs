@@ -759,6 +759,34 @@ namespace CitizenSoul
     public const int QuirkBreakDay = 355;
     public const int QuirkBreakPerMille = 250;
     public const int QuirkBreakMood = -4;
+
+    // -- M5j-ii tempo (F125-F126) --
+    public const int TempoMinAgeDays = 21;
+    public const int TempoTalkGateMin = 62;
+    public const int TempoQuietGateMax = 38;
+    public const int TempoWarmGateMin = 55;
+    public const int TempoFormPerMille = 220;
+    public const int TempoTalkMood = 3;
+    public const int TempoListenMood = 3;
+    public const int TempoDuoPerMille = 60;
+    public const int TempoDuoBump = 5;
+    public const int TempoDuoMood = 5;
+    public const int TempoConfidePerMille = 30;
+    public const int TempoConfideBump = 3;
+    public const int TempoConfideMood = 4;
+    public const int TempoSleepFormPerMille = 260;
+    public const int TempoEarlyMood = 2;
+    public const int TempoOwlMood = 2;
+    public const int TempoSnoozeMood = 2;
+    public const int TempoLateSnoozePerMille = 220;
+    public const int TempoLateOtherPerMille = 70;
+    public const int TempoLatePeaceAt = 3;
+    public const int TempoLateMood = -2;
+    public const int TempoPeaceMood = 3;
+    public const int TempoPunctualPerMille = 200;
+    public const int TempoPunctualMood = 3;
+    public const int TempoWaitPerMille = 80;
+    public const int TempoWaitMood = -3;
     }
 
     /// <summary>Shared one-liners so systems don't each reinvent mood/memory writes.</summary>

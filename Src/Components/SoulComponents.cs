@@ -283,6 +283,15 @@ namespace CitizenSoul
         TradKeep = 264,          // F124: kept the tradition this year
         TradShared = 265,        // F124: loved ones joined the tradition
         TradBreak = 266,         // F124: the tradition broke
+        TalkOn = 267,            // F125: found their voice in a room
+        ListenOn = 268,          // F125: became someone people confide in
+        DuoOn = 269,             // F125: found the other half of a conversation
+        ConfideOn = 270,         // F125: trusted with something quiet
+        SleepOn = 271,           // F126: settled into a sleep rhythm
+        LateOn = 272,            // F126: made someone wait
+        LateAccounted = 273,     // F126: friends stopped counting the minutes
+        WaitOn = 274,            // F126: waited on the one who is always late
+        PunctualOn = 275,        // F126: never late, and proud of it
         }
 
     /// <summary>Quirk bits packed into SoulPersonality.m_Quirk.</summary>

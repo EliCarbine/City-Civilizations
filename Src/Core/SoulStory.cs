@@ -285,6 +285,15 @@ case SoulEventKind.TradOn: return "started a private tradition";
 case SoulEventKind.TradKeep: return "kept the tradition";
 case SoulEventKind.TradShared: return "loved ones joined in";
 case SoulEventKind.TradBreak: return "the tradition broke";
+case SoulEventKind.TalkOn: return "found their voice in a room";
+case SoulEventKind.ListenOn: return "became someone people confide in";
+case SoulEventKind.DuoOn: return "found the other half of a conversation";
+case SoulEventKind.ConfideOn: return "was trusted with something quiet";
+case SoulEventKind.SleepOn: return "settled into their own hours";
+case SoulEventKind.LateOn: return "kept someone waiting";
+case SoulEventKind.LateAccounted: return "friends stopped counting the minutes";
+case SoulEventKind.WaitOn: return "waited on the one who is always late";
+case SoulEventKind.PunctualOn: return "was early like always";
 default: return "something stirred";
             }
         }
