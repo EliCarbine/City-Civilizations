@@ -68,7 +68,8 @@ namespace CitizenSoul
         TrialAcquitted = 52,    // F35: walked, barely
         Released = 53,          // F35: back, changed
         PetAdopted = 54,        // F47: a warm anchor at home
-        PetDied = 55            // F47: the anchor slipped
+        PetDied = 55,           // F47: the anchor slipped
+        Reunited = 56           // F61: old friends meet again after a long spell apart
         }
 
     /// <summary>Quirk bits packed into SoulPersonality.m_Quirk.</summary>

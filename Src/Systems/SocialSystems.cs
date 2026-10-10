@@ -146,8 +146,24 @@ namespace CitizenSoul
 
             DynamicBuffer<SoulEdge> ea = em.GetBuffer<SoulEdge>(a);
             DynamicBuffer<SoulEdge> eb = em.GetBuffer<SoulEdge>(b);
-            bool freshA = SoulEdgeUtil.Find(ea, b) < 0;
-            bool freshB = SoulEdgeUtil.Find(eb, a) < 0;
+            int preA = SoulEdgeUtil.Find(ea, b);
+            int preB = SoulEdgeUtil.Find(eb, a);
+            bool freshA = preA < 0;
+            bool freshB = preB < 0;
+
+            // M4 (F61): friends apart for a long spell meet again
+            if (preA >= 0)
+            {
+                uint gap = day - ea[preA].m_LastDay;
+                if (gap >= (uint)SoulTune.ReunionGapDays && ea[preA].m_Affinity >= SoulTune.ReunionMinAffinity)
+                {
+                    short g = (short)Math.Min(gap, 32000u);
+                    SoulFeel.Note(em, a, day, SoulEventKind.Reunited, g, b);
+                    SoulFeel.Note(em, b, day, SoulEventKind.Reunited, g, a);
+                    SoulFeel.Pulse(em, a, SoulTune.ReunionMood);
+                    SoulFeel.Pulse(em, b, SoulTune.ReunionMood);
+                }
+            }
 
             Unity.Mathematics.Random rng = SoulRng.For(pa.m_SoulSeed, a, day * 977u + 31u);
             int rng01 = rng.NextInt(0, 100);

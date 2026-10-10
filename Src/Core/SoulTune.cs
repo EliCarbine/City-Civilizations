@@ -218,6 +218,16 @@ namespace CitizenSoul
     public const int DogLifespanDays = 520;           // soul-days a dog lives
     public const int CatLifespanDays = 640;           // soul-days a cat lives
     public const int BirdLifespanDays = 320;          // soul-days a bird lives
+
+    // --- M4: story, funerals, reunions (F43, F58, F61) ---
+    public const int ReunionGapDays = 300;            // days apart that make a meeting a reunion
+    public const int ReunionMinAffinity = 60;         // affinity an old friendship needs to count
+    public const int ReunionMood = 6;                 // mood lift of a reunion
+    public const int MournMoodBase = -6;              // base mood hit of losing someone
+    public const int MournCloseAffinity = 90;         // affinity above which a loss scars
+    public const int MournTrauma = 10;                // trauma of losing someone close
+    public const int MemorialAnnivMood = -8;          // mood hit on a passing's anniversary
+    public const int RegistryCap = 64;                // passings remembered in the registry
     }
 
     /// <summary>Shared one-liners so systems don't each reinvent mood/memory writes.</summary>

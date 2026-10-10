@@ -53,7 +53,7 @@ namespace CitizenSoul
 
         public void Deserialize<TReader>(TReader reader) where TReader : IReader
         {
-            int version;
+            byte version;
             reader.Read(out version);
             if (version > SoulConsts.ComponentVersion)
             {
@@ -106,7 +106,7 @@ namespace CitizenSoul
 
         public void Deserialize<TReader>(TReader reader) where TReader : IReader
         {
-            int version;
+            byte version;
             reader.Read(out version);
             if (version > SoulConsts.ComponentVersion)
             {
@@ -145,7 +145,7 @@ namespace CitizenSoul
 
         public void Deserialize<TReader>(TReader reader) where TReader : IReader
         {
-            int version;
+            byte version;
             reader.Read(out version);
             if (version > SoulConsts.ComponentVersion)
             {
@@ -180,7 +180,7 @@ namespace CitizenSoul
 
         public void Deserialize<TReader>(TReader reader) where TReader : IReader
         {
-            int version;
+            byte version;
             reader.Read(out version);
             if (version > SoulConsts.ComponentVersion)
             {
@@ -216,7 +216,7 @@ namespace CitizenSoul
 
         public void Deserialize<TReader>(TReader reader) where TReader : IReader
         {
-            int version;
+            byte version;
             reader.Read(out version);
             if (version > SoulConsts.ComponentVersion)
             {

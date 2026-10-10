@@ -23,7 +23,8 @@ namespace Game
         Modification14 = 14,
         Modification15 = 15,
         Modification16 = 16,
-        ModificationEnd = 100
+        ModificationEnd = 100,
+        UIUpdate = 101
     }
 
     public abstract class GameSystemBase : SystemBase
@@ -89,5 +90,10 @@ namespace Game.Citizens
     public struct HouseholdCitizen : IBufferElementData
     {
         public Entity m_Citizen;
+    }
+
+    /// <summary>Tag on the citizen the player follows in the inspector.</summary>
+    public struct Followed : IComponentData
+    {
     }
 }

@@ -36,8 +36,10 @@ namespace CitizenSoul
             updateSystem.UpdateAfter<StreetSystem, TherapySystem>(SystemUpdatePhase.ModificationEnd);
             updateSystem.UpdateAfter<JusticeSystem, StreetSystem>(SystemUpdatePhase.ModificationEnd);
             updateSystem.UpdateAfter<PetSystem, JusticeSystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<MemorialSystem, PetSystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAt<SoulPanelUISystem>(SystemUpdatePhase.UIUpdate);
 
-            SoulLog.Info("Citizen Soul loaded: 18 systems registered.");
+            SoulLog.Info("Citizen Soul loaded: 20 systems registered.");
         }
 
         public void OnDispose()

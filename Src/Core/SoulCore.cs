@@ -59,6 +59,7 @@ namespace CitizenSoul
         public const int StreetLanes = 64;      // M3 street-crime lane (F31-F33)
         public const int JusticeLanes = 64;     // M3 arrest & prison lane (F35)
         public const int PetLanes = 64;         // M3 companion-animal lane (F47)
+        public const int MemorialLanes = 64;    // M4 remembrance lane (F43)
     }
 
     /// <summary>Pure integer math — no Unity.Mathematics dependency, fully unit-testable.</summary>
