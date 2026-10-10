@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Offline compile-check for Citizen Soul (not shipped with the mod).
+    The real mod builds against Cities: Skylines II assemblies (net48, game install).
+    This project compiles Src/ against signature-faithful stubs of the Unity/CS2 API
+    so syntax and internal consistency can be verified on any machine with a .NET SDK.
+    Run: dotnet build Tools/StubCheck/CitizenSoul.StubCheck.csproj
+  -->
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <OutputType>Library</OutputType>
+    <AssemblyName>CitizenSoul.StubCheck</AssemblyName>
+    <RootNamespace>CitizenSoul.StubCheck</RootNamespace>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <!-- Stub assemblies cannot assign every field; keep those warnings quiet. -->
+    <NoWarn>CS0649;CS0169;CS0414;CS0067</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Stubs/**/*.cs" />
+    <Compile Include="../../Src/**/*.cs" />
+  </ItemGroup>
+
+</Project>

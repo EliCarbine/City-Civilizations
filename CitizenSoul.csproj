@@ -34,4 +34,9 @@
     </Reference>
     <!-- Unity.Mathematics, Unity.Collections, Unity.Burst as needed -->
   </ItemGroup>
+
+  <ItemGroup>
+    <!-- Dev-only: Tools/StubCheck is an offline compile-check harness, not shipped with the mod. -->
+    <Compile Remove="Tools/**/*.cs" />
+  </ItemGroup>
 </Project>

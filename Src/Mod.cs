@@ -1,33 +1,37 @@
-using Game;          // UpdateSystem, SystemUpdatePhase (verify using vs template)
-using Game.Modding;  // IMod
-using Unity.Entities;
+// Citizen Soul — mod entry point.
+// Registers the full system roster with the game's update loop.
+// Ordering: initialization first; everything else after it. Fights resolve
+// after socials so same-day grudges ripen on later ticks, and decay runs last
+// so a day's touches are never eaten by idle cooling in the same pass.
+
+using Game;
+using Game.Modding;
 
 namespace CitizenSoul
 {
-    /// <summary>
-    /// Mod entry point. System registration follows the documented pattern:
-    /// updateSystem.UpdateBefore/At/After&lt;T&gt;(SystemUpdatePhase.&lt;phase&gt;).
-    /// </summary>
     public class Mod : IMod
     {
         public void OnLoad(UpdateSystem updateSystem)
         {
-            // Init early: souls must exist before social systems see citizens.
-            updateSystem.UpdateBefore<SoulInitializeSystem>(SystemUpdatePhase.Modification2);
+            SoulLog.Info("Citizen Soul loading (M0/M1 system roster)...");
 
-            // Daily cadence systems (self-throttled internally to day slices).
-            updateSystem.UpdateAt<DailyLearningSystem>(SystemUpdatePhase.Modification3);
-            updateSystem.UpdateAt<SocializeSystem>(SystemUpdatePhase.Modification3);
-            updateSystem.UpdateAt<FightResolutionSystem>(SystemUpdatePhase.Modification3);
-            updateSystem.UpdateAt<InjurySystem>(SystemUpdatePhase.Modification3);
+            updateSystem.UpdateBefore<SoulInitializeSystem>(SystemUpdatePhase.ModificationEnd);
 
-            // Mood bookkeeping late, after all emotion sources have run.
-            updateSystem.UpdateAfter<EmotionSystem>(SystemUpdatePhase.Modification4);
-            updateSystem.UpdateAfter<MemoryDecaySystem>(SystemUpdatePhase.Modification4);
+            updateSystem.UpdateAfter<SoulSpikeSystem, SoulInitializeSystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<DailyLearningSystem, SoulInitializeSystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<EmotionSystem, SoulInitializeSystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<SoulJournalSystem, SoulInitializeSystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<SocializeSystem, SoulInitializeSystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<FightResolutionSystem, SocializeSystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<MemoryDecaySystem, SocializeSystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<InjurySystem, SoulInitializeSystem>(SystemUpdatePhase.ModificationEnd);
+
+            SoulLog.Info("Citizen Soul loaded: 9 systems registered.");
         }
 
         public void OnDispose()
         {
+            SoulLog.Info("Citizen Soul unloaded.");
         }
     }
 }
