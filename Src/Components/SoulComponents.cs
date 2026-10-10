@@ -194,6 +194,35 @@ namespace CitizenSoul
         ForumJoined = 177,       // M5g F98: found the forums
         ForumFriend = 178,       // M5g F98: an unlikely friendship
         DigitalLegacy = 179,     // M5g F99: the posts will outlive them
+        // -- M5h: community & civic life (F100-F108) --
+        Volunteered = 180,       // F100: signed up to volunteer
+        VolClique = 181,         // F100: found the volunteer regulars
+        VolFatigue = 182,        // F100: burned out on giving
+        WatchFormed = 183,       // F101: started a neighborhood watch
+        PatrolWalk = 184,        // F101: walked the evening patrol
+        WatchOverreach = 185,    // F101: went too far on watch duty
+        GardenPlot = 186,        // F102: took a plot in the community garden
+        TomatoRival = 187,       // F102: feuded over tomatoes
+        HarvestShare = 188,      // F102: shared the harvest
+        GardenVandal = 189,      // F102: found the garden wrecked
+        Petition = 190,          // F103: started a petition
+        March = 191,             // F103: marched with the neighborhood
+        PetitionWin = 192,       // F103: won the petition
+        PetitionIgnored = 193,   // F103: was ignored by city hall
+        TownHall = 194,          // F104: spoke at a town hall
+        Speech = 195,            // F104: roused the whole room
+        FirstTimer = 196,        // F104: went to their first town hall
+        GiveDrive = 197,         // F105: gave to the drive
+        GoalBeaten = 198,        // F105: helped the district beat its goal
+        JurySummons = 199,       // F106: was summoned for jury duty
+        Foreman = 200,           // F106: served as foreman
+        JuryStory = 201,         // F106: still tells the trial story
+        BlockParty = 202,        // F107: threw the block party
+        Cleanup = 203,           // F107: cleaned up the street
+        CrisisHelp = 204,        // F108: helped through the crisis
+        CrisisHero = 205,        // F108: pulled a neighbor out
+        CrisisCohesion = 206,    // F108: grieved with the block
+        CrisisTrauma = 207,      // F108: still hears that night
         }
 
     /// <summary>Quirk bits packed into SoulPersonality.m_Quirk.</summary>

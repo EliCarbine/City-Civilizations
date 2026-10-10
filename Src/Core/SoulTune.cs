@@ -575,6 +575,65 @@ namespace CitizenSoul
     public const int TechForumVisitBump = 6;
     public const int TechLegacyAgeDays = 32850;       // ~90 years: the archive speaks
     public const int TechLegacyMood = 4;
+
+    // -- M5h: community & civic life (F100-F108) --
+    public const int CivicMinAgeDays = 6570;
+    public const int CivicVolFormPerMille = 40;
+    public const int CivicVolRecurDays = 60;
+    public const int CivicVolMood = 4;
+    public const int CivicCliqueBump = 4;
+    public const int CivicFatiguePerMille = 120;
+    public const int CivicFatigueMood = -4;
+    public const int CivicWatchFormPerMille = 50;
+    public const int CivicWatchRecurDays = 45;
+    public const int CivicWatchTrustBump = 3;
+    public const int CivicWatchMood = 3;
+    public const int CivicOverzealPerMille = 90;
+    public const int CivicOverzealBump = -4;
+    public const int CivicOverzealMood = -3;
+    public const int CivicGardenFormPerMille = 60;
+    public const int CivicGardenMood = 5;
+    public const int CivicTomatoPerMille = 150;
+    public const int CivicTomatoBump = -2;
+    public const int CivicTomatoMood = -1;
+    public const int CivicHarvestMood = 4;
+    public const int CivicHarvestBump = 3;
+    public const int CivicVandalPerMille = 80;
+    public const int CivicVandalMood = -8;
+    public const int CivicPetitionFormPerMille = 60;
+    public const int CivicPetitionMood = 6;
+    public const int CivicMarchMood = 5;
+    public const int CivicWinMood = 9;
+    public const int CivicIgnoredMood = -5;
+    public const int CivicPetitionRunDays = 60;
+    public const int CivicWinPerMille = 450;
+    public const int CivicTownFormPerMille = 70;
+    public const int CivicTownRecurDays = 120;
+    public const int CivicFirstTimerMood = 3;
+    public const int CivicTownMood = 3;
+    public const int CivicSpeechPerMille = 200;
+    public const int CivicSpeechMood = 5;
+    public const int CivicGivePerMille = 100;
+    public const int CivicGiveMood = 4;
+    public const int CivicGoalMood = 3;
+    public const int CivicJuryPerMille = 40;
+    public const int CivicJuryMood = 2;
+    public const int CivicForemanPerMille = 120;
+    public const int CivicForemanMood = 7;
+    public const int CivicJuryStoryMood = 2;
+    public const int CivicPartyMood = 6;
+    public const int CivicCleanupMood = 3;
+    public const int CivicCleanupBump = 2;
+    public const int CivicCrisisPerMille = 300;
+    public const int CivicCrisisHelpMood = 4;
+    public const int CivicCrisisHeroMood = 9;
+    public const int CivicCrisisCohesionBump = 4;
+    public const int CivicCrisisTraumaMood = -6;
+    public const int CivicWarmAgreeMin = 140;
+    public const int CivicBoldExtraMin = 150;
+    public const int CivicCliqueActs = 5;
+    public const int CivicGiveGoalActs = 10;
+    public const int CivicSpeechCloutMin = 40;
     }
 
     /// <summary>Shared one-liners so systems don't each reinvent mood/memory writes.</summary>
