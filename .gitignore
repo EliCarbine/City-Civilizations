@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Build output (C# / IDE)
+bin/
+obj/
+.vs/
+.idea/
+*.user
+
+# Derived docs — regenerate from the Markdown sources via the docx pipeline
+*.docx

@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!--
+    SKELETON — align against the official toolchain template before first build:
+    the template pins the correct TargetFramework and reference set.
+  -->
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework> <!-- VERIFY vs template -->
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>CitizenSoul</AssemblyName>
+    <RootNamespace>CitizenSoul</RootNamespace>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <!-- Path to the game install (edit per machine; Wine prefix or Windows) -->
+    <GameDir Condition="'$(GameDir)' == ''">C:\Program Files (x86)\Steam\steamapps\common\Cities Skylines II</GameDir>
+    <!-- Community convention: game assemblies live under Cities2_Data\Managed -->
+    <GameManagedDir>$(GameDir)\Cities2_Data\Managed</GameManagedDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Game">
+      <HintPath>$(GameManagedDir)\Game.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Colossal.Core">
+      <HintPath>$(GameManagedDir)\Colossal.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Colossal.Serialization.Entities">
+      <HintPath>$(GameManagedDir)\Colossal.Serialization.Entities.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Unity.Entities">
+      <HintPath>$(GameManagedDir)\Unity.Entities.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <!-- Unity.Mathematics, Unity.Collections, Unity.Burst as needed -->
+  </ItemGroup>
+</Project>
