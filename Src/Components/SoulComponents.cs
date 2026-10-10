@@ -17,8 +17,12 @@ namespace CitizenSoul
         Healed = 8,      // injury recovered
         LevelUp = 9,     // skill gained a level
         GoodDay = 10,    // mood stayed high at day's end
-        HardDay = 11     // mood stayed low at day's end
-    }
+        HardDay = 11,       // mood stayed low at day's end
+        // M1 vitals (append-only: existing byte values stay save-stable)
+        SleptWell = 12,     // exceptional night's rest
+        SleptBad = 13,      // rough night, little rest
+        Meditated = 14      // mind reached (or held) its calm
+        }
 
     /// <summary>Quirk bits packed into SoulPersonality.m_Quirk.</summary>
     public static class SoulQuirks
@@ -323,6 +327,45 @@ namespace CitizenSoul
             }
             reader.Read(out m_Counter);
             reader.Read(out m_RollHash);
+            reader.Read(out m_LastDay);
+        }
+    }
+
+    /// <summary>
+    /// M1 personal-vitals lane: F18 sleep energy, F19 meditation calm.
+    /// F16 fitness lives in Skills.m_Fitness (trained by VitalsSystem, read by
+    /// fights and accident rolls). m_LastDay is this lane's day cursor, exactly
+    /// like SoulMeta's cursors: one full pass per citizen per game day.
+    /// Energy: drains with living, restored by sleep. Calm: builds by meditating,
+    /// decays toward baseline on days without practice.
+    /// </summary>
+    public struct SoulVitals : IComponentData, ISerializable
+    {
+        public byte m_Energy;        // 0-255: 0 = spent, 255 = fully rested
+        public byte m_Calm;          // 0-255: current serenity
+        public byte m_SleepQuality;  // 0-255: last night's rest roll (story value)
+        public uint m_LastDay;       // last day the vitals lane advanced
+
+        public void Serialize<TWriter>(TWriter writer) where TWriter : IWriter
+        {
+            writer.Write(SoulConsts.ComponentVersion);
+            writer.Write(m_Energy);
+            writer.Write(m_Calm);
+            writer.Write(m_SleepQuality);
+            writer.Write(m_LastDay);
+        }
+
+        public void Deserialize<TReader>(TReader reader) where TReader : IReader
+        {
+            byte version;
+            reader.Read(out version);
+            if (version > SoulConsts.ComponentVersion)
+            {
+                SoulLog.Once("vitals.version", "SoulVitals read with version " + version + " > known " + SoulConsts.ComponentVersion);
+            }
+            reader.Read(out m_Energy);
+            reader.Read(out m_Calm);
+            reader.Read(out m_SleepQuality);
             reader.Read(out m_LastDay);
         }
     }

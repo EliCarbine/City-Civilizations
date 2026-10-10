@@ -53,6 +53,38 @@ namespace CitizenSoul
         public const byte ChangeBefriended = 1;
         public const byte ChangeFellOut = 4;
         public const byte ChangeRival = 8;
+
+        // --- vitals: sleep / meditation / fitness (M1) ---
+        public const int VitStartEnergy = 200;          // newly-minted souls are rested
+        public const int VitStartCalm = 110;
+        public const int EnergyDrainPerDay = 50;        // living costs energy; sleep restores it
+        public const int SleepMaxRestore = 100;         // restore at perfect quality 255; ~50 at neutral 128
+        public const int SleepQualityBase = 128;        // perfectly neutral night's sleep
+        public const int SleepQualitySpread = 45;       // uniform roll ±this around base, then modifiers
+        public const int NightOwlSleepPenalty = 20;     // night owls short themselves on rest
+        public const int InjuredSleepPenalty = 25;      // pain disrupts rest
+        public const int StressedSleepPenalty = 10;     // restless when calm is low
+        public const int StressCalm = 70;               // below this calm, daily stress pulse
+        public const int SleepWellQuality = 165;        // journal threshold: great night
+        public const int SleepBadQuality = 75;          // journal threshold: rough night
+        public const int EnergyWeary = 60;              // below this energy, daily weary pulse
+        public const int EnergyExhausted = 25;          // below this, accidents get likelier
+        public const int WearyMood = -4;
+        public const int StressedMood = -3;
+        public const int MeditateChancePerMille = 140;  // base per-day chance to sit
+        public const int LonerMeditateBonus = 60;       // solitude is their temple
+        public const int MeditateCalmGain = 16;
+        public const int MeditateMood = 3;
+        public const int CalmBaseline = 80;             // calm drifts here on days without practice
+        public const int CalmDecayPerDay = 5;
+        public const int ZenCalm = 160;                 // journal milestone: mind at peace
+        public const int ZenMood = 10;
+        public const int MeditateHealMinCalm = 120;     // only a calm mind mends faster
+        public const int TrainChancePerMille = 160;     // base per-day chance to work out
+        public const int FitnessQuirkTrainBonus = 240;
+        public const int TrainXp = 8;                   // a bit more than a workday's learning
+        public const int TrainEnergyCost = 14;
+        public const int TrainMinEnergy = 40;           // too spent to train
     }
 
     /// <summary>Shared one-liners so systems don't each reinvent mood/memory writes.</summary>

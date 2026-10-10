@@ -140,5 +140,42 @@ namespace CitizenSoul
             int v = 128 + ((avg - 128) * spread) / 128;
             return SoulMath.ToByte(v);
         }
+
+        // --- M1 vitals rules (pure math: unit-testable, no entity access) ---
+
+        /// <summary>Sleep quality 0-255: neutral base + spread roll, shaped by quirks, injury, stress.</summary>
+        public static int SleepQuality(int roll, SoulPersonality p, bool injured, int calm)
+        {
+            int q = SoulTune.SleepQualityBase + roll;
+            if (SoulQuirks.Has(p.m_Quirk, SoulQuirks.NightOwl)) q -= SoulTune.NightOwlSleepPenalty;
+            if (injured) q -= SoulTune.InjuredSleepPenalty;
+            if (calm < SoulTune.StressCalm) q -= SoulTune.StressedSleepPenalty;
+            return SoulMath.Clamp(q, 0, 255);
+        }
+
+        /// <summary>Energy restored by a night of rest; quality 128 is exactly break-even.</summary>
+        public static int SleepRestore(int quality) { return (quality * SoulTune.SleepMaxRestore) / 255; }
+
+        /// <summary>Per-day meditation chance in per mille; loners sit more often.</summary>
+        public static int MeditateChancePerMille(SoulPersonality p)
+        {
+            return SoulTune.MeditateChancePerMille + (SoulQuirks.Has(p.m_Quirk, SoulQuirks.Loner) ? SoulTune.LonerMeditateBonus : 0);
+        }
+
+        /// <summary>
+        /// Accident-risk delta (per mille) from personal vitals: exhaustion raises the
+        /// risk, fitness offsets it (a fit-exhausted citizen nets out even). Callers
+        /// clamp the final chance to at least 1 so accidents stay possible.
+        /// </summary>
+        public static int AccidentPerMilleDelta(int fitnessLevel, int energy)
+        {
+            int d = 0;
+            if (fitnessLevel >= 3) d -= 1;
+            if (fitnessLevel >= 6) d -= 1;
+            if (fitnessLevel >= 10) d -= 1;
+            if (energy < SoulTune.EnergyWeary) d += 1;
+            if (energy < SoulTune.EnergyExhausted) d += 2;
+            return d;
+        }
     }
 }

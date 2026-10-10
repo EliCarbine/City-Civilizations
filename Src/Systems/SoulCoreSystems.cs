@@ -120,6 +120,13 @@ namespace CitizenSoul
             meta.m_MirroredMemories = 0;
             em.AddComponentData(e, meta);
 
+            SoulVitals vit = default(SoulVitals);
+            vit.m_Energy = (byte)SoulTune.VitStartEnergy;
+            vit.m_Calm = (byte)SoulTune.VitStartCalm;
+            vit.m_SleepQuality = (byte)SoulTune.SleepQualityBase;
+            vit.m_LastDay = day;           // first night's rest resolves on the next day
+            em.AddComponentData(e, vit);
+
             em.AddBuffer<SoulEdge>(e);
             em.AddBuffer<SoulMemory>(e);
             em.AddBuffer<SoulJournalEntry>(e);

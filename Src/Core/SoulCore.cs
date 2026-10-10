@@ -51,6 +51,7 @@ namespace CitizenSoul
         public const int EmotionLanes = 128;
         public const int DecayLanes = 32;
         public const int JournalLanes = 32;
+        public const int VitalsLanes = 128;
     }
 
     /// <summary>Pure integer math — no Unity.Mathematics dependency, fully unit-testable.</summary>

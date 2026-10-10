@@ -519,7 +519,17 @@ namespace CitizenSoul
                             if (em.IsComponentEnabled<InFight>(e)) continue;
                             SoulPersonality p = em.GetComponentData<SoulPersonality>(e);
                             Unity.Mathematics.Random rng = SoulRng.For(p.m_SoulSeed, e, day * 523u + 17u);
-                            if (rng.NextInt(0, 1000) < SoulTune.AccidentChancePerMille)
+                            // vitals: exhaustion raises the risk, fitness offsets it;
+                            // the floor of 1 per mille keeps accidents possible for the fit.
+                            int perMille = SoulTune.AccidentChancePerMille;
+                            if (em.HasComponent<SoulVitals>(e))
+                            {
+                                SoulVitals vit = em.GetComponentData<SoulVitals>(e);
+                                ushort fit = em.GetComponentData<Skills>(e).m_Fitness;
+                                perMille += SoulRules.AccidentPerMilleDelta(SoulRules.SkillLevel(fit), vit.m_Energy);
+                                if (perMille < 1) perMille = 1;
+                            }
+                            if (rng.NextInt(0, 1000) < perMille)
                             {
                                 Accident(em, e, day, rng, ref accidents);
                             }
