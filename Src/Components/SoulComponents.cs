@@ -84,6 +84,23 @@ namespace CitizenSoul
         Burnout = 67,            // M5b: worked themselves ragged
         DebtCrunch = 68,         // M5b: money ran tight
         CharityGiven = 69,       // M5b: helped someone get back on their feet
+        ProbationStarted = 70,   // M5c: began the long walk back
+        CheckedIn = 71,          // M5c: showed up clean
+        Violation = 72,          // M5c: tripped a condition of probation
+        Backslid = 73,           // M5c: fell back into old ways
+        ProbationFinished = 74,  // M5c: finished the walk clean
+        ReformProgram = 75,      // M5c: joined a reform program
+        ProgramCompleted = 76,   // M5c: graduated the reform program
+        CommunityService = 77,   // M5c: put in work for the city
+        MentorFound = 78,        // M5c: found someone who believed
+        SteadyWork = 79,         // M5c: held down steady work
+        RecordCleared = 80,      // M5c: cleared their name
+        MidlifeStir = 81,        // M5c: felt the years ask for something
+        MidlifePivot = 82,       // M5c: turned a corner mid-life
+        SecondWind = 83,         // M5c: found a second wind
+        WishFormed = 84,         // M5c: set their heart on something
+        WishFulfilled = 85,      // M5c: chased a wish down
+        WishFaded = 86,          // M5c: let an old wish go
         }
 
     /// <summary>Quirk bits packed into SoulPersonality.m_Quirk.</summary>

@@ -41,9 +41,11 @@ namespace CitizenSoul
 
             // M5b: work & economy (F21-F25, F27, F30)
             updateSystem.UpdateAfter<WorkSystem, FamilySystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<ReentrySystem, WorkSystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<MidlifeSystem, ReentrySystem>(SystemUpdatePhase.ModificationEnd);
             updateSystem.UpdateAt<SoulPanelUISystem>(SystemUpdatePhase.UIUpdate);
 
-            SoulLog.Info("Citizen Soul loaded: 22 systems registered.");
+            SoulLog.Info("Citizen Soul loaded: 24 systems registered.");
         }
 
         public void OnDispose()

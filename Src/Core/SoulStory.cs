@@ -88,6 +88,23 @@ case SoulEventKind.ShopOpened: return "opened a shop of their own";
 case SoulEventKind.Burnout: return "worked themselves into the ground";
 case SoulEventKind.DebtCrunch: return "fell behind on money";
 case SoulEventKind.CharityGiven: return "helped someone get back on their feet";
+case SoulEventKind.ProbationStarted: return "started their probation";
+case SoulEventKind.CheckedIn: return "showed up clean";
+case SoulEventKind.Violation: return "tripped a condition of probation";
+case SoulEventKind.Backslid: return "fell back into old ways";
+case SoulEventKind.ProbationFinished: return "finished probation";
+case SoulEventKind.ReformProgram: return "joined a reform program";
+case SoulEventKind.ProgramCompleted: return "graduated the reform program";
+case SoulEventKind.CommunityService: return "put in work for the city";
+case SoulEventKind.MentorFound: return "found someone who believed";
+case SoulEventKind.SteadyWork: return "held down steady work";
+case SoulEventKind.RecordCleared: return "cleared their name";
+case SoulEventKind.MidlifeStir: return "felt the years ask for something";
+case SoulEventKind.MidlifePivot: return "turned a corner mid-life";
+case SoulEventKind.SecondWind: return "found a second wind";
+case SoulEventKind.WishFormed: return "set their heart on something";
+case SoulEventKind.WishFulfilled: return "chased a wish down";
+case SoulEventKind.WishFaded: return "let an old wish go";
                 default: return "something stirred";
             }
         }

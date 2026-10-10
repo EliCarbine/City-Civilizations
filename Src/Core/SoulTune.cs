@@ -268,6 +268,55 @@ namespace CitizenSoul
     public const int ShopPerMille = 4;               // per-mille daily chance a hustle becomes a shop
     public const int DebtPerMille = 5;               // per-mille daily chance of money trouble
     public const int CharityPerMille = 7;            // per-mille daily chance of giving
+
+    // --- M5c: reentry -- the long walk back (F36) ---
+    public const int ProbationDays = 45;             // days of probation after a record
+    public const int CheckInDays = 6;                // days between check-ins
+    public const int CheckInGain = 2;                // redemption per clean check-in
+    public const int CheckInMood = 2;                // mood for showing up clean
+    public const int ViolationPerMille = 45;         // per-mille daily chance of slipping
+    public const int ViolationLimit = 3;             // slips before old ways return
+    public const int ViolationMood = -6;             // mood for a slip
+    public const int BackslideMood = -12;            // mood for falling back
+    public const int ProbationStartMood = 1;         // mood when probation begins
+    public const int ProgramPerMille = 30;           // per-mille daily chance of enrolling
+    public const int ProgramStartMood = 2;           // mood for joining a program
+    public const int ReformProgramDays = 30;         // days a program runs
+    public const int ProgramGain = 8;                // redemption for finishing
+    public const int ProgramMood = 4;                // mood for graduating
+    public const int ServicePerMille = 120;          // per-mille daily chance of service
+    public const int ServiceGain = 2;                // redemption per service day
+    public const int ServiceMood = 3;                // mood for serving the city
+    public const int ServiceGoal = 5;                // service days that count as paying the debt
+    public const int MentorPerMille = 20;            // per-mille daily chance of a mentor
+    public const int MentorMinAgeDays = 7300;        // ~20 years: old enough to guide
+    public const int MentorGain = 10;                // redemption from a mentor's belief
+    public const int MentorMood = 8;                 // mood for finding a believer
+    public const int SteadyJobMinStreak = 14;        // days of work that count as steady
+    public const int SteadyJobPerMille = 40;         // per-mille daily chance steady work lands
+    public const int SteadyJobGain = 6;              // redemption from steady work
+    public const int SteadyJobMood = 6;              // mood for holding it down
+    public const int ProbationGain = 12;             // redemption for finishing probation
+    public const int ProbationDoneMood = 8;          // mood for finishing clean
+    public const int RedeemNeed = 40;                // redemption that clears a record
+    public const int ClearedMood = 18;               // mood when the record lifts
+    public const int NotorietyRelief = 40;           // heat washed off when cleared
+
+    // --- M5c: midlife & wishes (F56/F57) ---
+    public const int MidlifeStartDays = 16200;       // ~45 years: the stir arrives
+    public const int MidlifeDelayDays = 10;          // days from stir to pivot
+    public const int MidlifeWarmDays = 30;           // days from pivot to second wind
+    public const int StirMood = -3;                  // mood of the midlife stir
+    public const int PivotMood = 6;                  // mood when the pivot lands
+    public const int SecondWindMood = 12;            // mood of the warm years
+    public const int WishMax = 4;                    // wishes a soul can hold at once
+    public const int WishFormDays = 20;              // days between new wishes
+    public const int WishPerMille = 25;              // per-mille daily chance a wish forms
+    public const int WishFadeDays = 120;             // days before an old wish fades
+    public const int WishFormedMood = 3;             // mood when a wish forms
+    public const int WishDoneMood = 14;              // mood when a wish lands
+    public const int WishFadeMood = -4;              // mood when a wish fades
+    public const int MasterCraftLevel = 4;           // career level that counts as master
     }
 
     /// <summary>Shared one-liners so systems don't each reinvent mood/memory writes.</summary>
