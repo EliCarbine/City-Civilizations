@@ -310,6 +310,32 @@ namespace CitizenSoul
         OverseasLetterOn = 291,  // F132: word from across the water
         PilgrimOn = 292,         // F133: the long trip back to the roots
         RememberWhenOn = 293,    // F134: "this used to be a field"
+        MustWatchOn = 294,       // F135: never missed the weekly show
+        RewatchOn = 295,         // F135: back to the comfort one
+        CliffhangerOn = 296,     // F135: left hanging and it stung
+        EraShiftOn = 297,        // F136: fell for a whole decade
+        SongSummerOn = 298,      // F136: a song owned the summer
+        TixChaosOn = 299,        // F137: fought the queue for tickets
+        ConcertGoOn = 300,       // F137: lost their voice at the show
+        MerchOn = 301,           // F137: bought the shirt at the stand
+        EncoreOn = 302,          // F137: got the encore they shouted for
+        MorningShowOn = 303,     // F138: the morning show knows them
+        HeadlineOn = 304,        // F138: read the headline and felt it
+        ShopRadioOn = 305,       // F138: hummed along to shop radio
+        AnnouncerOn = 306,       // F138: their voice on the traffic report
+        PodcastGoOn = 307,       // F139: started a podcast about it
+        PodcastGrowOn = 308,     // F139: listeners kept showing up
+        PodcastBlowOn = 309,     // F139: the podcast blew up
+        CommuteOn = 310,         // F139: commuted to a stranger's voice
+        CinemaNightOn = 311,     // F140: saw it on the big screen
+        CriticOn = 312,          // F140: wrote the review everyone quoted
+        DateFilmOn = 313,        // F140: shared a film in the dark
+        RainyFilmOn = 314,       // F140: let the rain pick the film
+        HomePremiereOn = 315,    // F140: watched the city premiere itself
+        CampaignGoOn = 316,      // F141: started a tabletop campaign
+        SessionOn = 317,         // F141: rolled dice with the regulars
+        DMRoleOn = 318,          // F141: took the chair behind the screen
+        FinaleOn = 319,          // F141: ended the campaign the right way
         }
 
     /// <summary>Quirk bits packed into SoulPersonality.m_Quirk.</summary>
