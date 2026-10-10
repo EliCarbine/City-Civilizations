@@ -4,6 +4,7 @@
 DESIGN.md          ← full spec: architecture, roadmap, persistence plan
 FEATURES.md        ← 61-feature catalog: the full "real human" roster + engine mapping
 FEATURES-2.md      ← Part II: 90 more (F62–F151) + addenda
+Citizen-Soul-Feature-List.md  ← consolidated catalog: all 151 features in one document
 CitizenSoul.csproj ← project skeleton (verify TFM + reference paths vs official template)
 Src/Mod.cs         ← IMod entry; registers all systems
 Src/Components/    ← soul data structs (ISerializable patterns from verified game code)
