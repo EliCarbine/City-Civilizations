@@ -294,6 +294,24 @@ case SoulEventKind.LateOn: return "kept someone waiting";
 case SoulEventKind.LateAccounted: return "friends stopped counting the minutes";
 case SoulEventKind.WaitOn: return "waited on the one who is always late";
 case SoulEventKind.PunctualOn: return "was early like always";
+case SoulEventKind.TripPlanOn: return "circled a date on the calendar";
+case SoulEventKind.TripGoOn: return "left town with a bag packed";
+case SoulEventKind.TripBackOn: return "came home with sand in everything";
+case SoulEventKind.DayTripOn: return "played tourist in their own city";
+case SoulEventKind.FieldTripOn: return "still talks about the school bus";
+case SoulEventKind.FirstCarOn: return "got the keys to their first car";
+case SoulEventKind.CarWashOn: return "washed the car till it shined";
+case SoulEventKind.SundayDriveOn: return "took the long way home";
+case SoulEventKind.RoadRageOn: return "lost their cool in traffic";
+case SoulEventKind.MissHomeOn: return "missed somewhere they left behind";
+case SoulEventKind.CalledHomeOn: return "called home, just to hear the room";
+case SoulEventKind.OldLetterOn: return "opened a letter years in coming";
+case SoulEventKind.WelcomedOn: return "got the welcome tour";
+case SoulEventKind.ColdShoulderOn: return "never got a welcome";
+case SoulEventKind.HostStudentOn: return "put a stranger up for a year";
+case SoulEventKind.OverseasLetterOn: return "read word from across the water";
+case SoulEventKind.PilgrimOn: return "went back to where the family is from";
+case SoulEventKind.RememberWhenOn: return "remembered when this was all fields";
 default: return "something stirred";
             }
         }

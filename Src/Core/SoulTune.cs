@@ -787,6 +787,55 @@ namespace CitizenSoul
     public const int TempoPunctualMood = 3;
     public const int TempoWaitPerMille = 80;
     public const int TempoWaitMood = -3;
+    // -- M5k travel (F127-F134) --
+    public const int TravelAdultAgeDays = 21;
+    public const int TravelTripGapDays = 240;
+    public const int TravelPlanLeadMin = 14;
+    public const int TravelPlanLeadSpan = 14;
+    public const int TravelTripLengthMin = 4;
+    public const int TravelTripLengthSpan = 5;
+    public const int TravelPlanMood = 3;
+    public const int TravelGoMood = 5;
+    public const int TravelBackMood = -2;
+    public const int TravelPhotoBump = 5;
+    public const int TravelDayTripPerMille = 180;
+    public const int TravelDayTripMood = 2;
+    public const int TravelDayTripBump = 3;
+    public const int TravelFieldTripPerMille = 200;
+    public const int TravelFieldTripMood = 3;
+    public const int TravelCarPerMille = 300;
+    public const int TravelFirstCarMood = 4;
+    public const int TravelCarPersonPerMille = 350;
+    public const int TravelCarWashLogPerMille = 180;
+    public const int TravelSundayDrivePerMille = 150;
+    public const int TravelSundayMood = 1;
+    public const int TravelRagePerMille = 300;
+    public const int TravelRageMood = -2;
+    public const int TravelHomesickPerMille = 350;
+    public const int TravelHomesickMood = -2;
+    public const int TravelCallPerMille = 400;
+    public const int TravelCallMood = 2;
+    public const int TravelLetterAgeDays = 55;
+    public const int TravelLetterPerMille = 450;
+    public const int TravelLetterMood = 2;
+    public const int TravelWelcomeAgeDays = 30;
+    public const int TravelWelcomeBelow = 600;
+    public const int TravelColdBelow = 750;
+    public const int TravelWelcomeMood = 3;
+    public const int TravelColdMood = -2;
+    public const int TravelHostOpenGateMin = 55;
+    public const int TravelHostPerMille = 120;
+    public const int TravelHostBump = 4;
+    public const int TravelHostMood = 4;
+    public const int TravelOverseasLetterPerMille = 400;
+    public const int TravelOverseasLetterMood = 2;
+    public const int TravelPilgrimAgeDays = 40;
+    public const int TravelPilgrimPerMille = 260;
+    public const int TravelPilgrimMood = 6;
+    public const int TravelNostalgiaAgeDays = 50;
+    public const int TravelNostalgiaPerMille = 300;
+    public const int TravelNostalgiaMood = 2;
+    public const int TravelLiferTenureDays = 400;
     }
 
     /// <summary>Shared one-liners so systems don't each reinvent mood/memory writes.</summary>

@@ -292,6 +292,24 @@ namespace CitizenSoul
         LateAccounted = 273,     // F126: friends stopped counting the minutes
         WaitOn = 274,            // F126: waited on the one who is always late
         PunctualOn = 275,        // F126: never late, and proud of it
+        TripPlanOn = 276,        // F127: a date circled on the calendar
+        TripGoOn = 277,          // F127: bag packed, gone
+        TripBackOn = 278,        // F127: home, sand still in the seams
+        DayTripOn = 279,         // F128: played tourist an hour from home
+        FieldTripOn = 280,       // F128: the bus ride they never forgot
+        FirstCarOn = 281,        // F129: keys of their own
+        CarWashOn = 282,         // F129: Sunday, bucket, driveway
+        SundayDriveOn = 283,     // F129: no destination, that's the point
+        RoadRageOn = 284,        // F129: honked first, apologized later
+        MissHomeOn = 285,        // F130: a wave of missing somewhere else
+        CalledHomeOn = 286,      // F130: just to hear the room
+        OldLetterOn = 287,       // F130: mail that took years to write
+        WelcomedOn = 288,        // F131: someone showed them around
+        ColdShoulderOn = 289,    // F131: nobody said welcome
+        HostStudentOn = 290,     // F132: put a stranger up for a year
+        OverseasLetterOn = 291,  // F132: word from across the water
+        PilgrimOn = 292,         // F133: the long trip back to the roots
+        RememberWhenOn = 293,    // F134: "this used to be a field"
         }
 
     /// <summary>Quirk bits packed into SoulPersonality.m_Quirk.</summary>
