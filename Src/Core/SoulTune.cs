@@ -634,6 +634,63 @@ namespace CitizenSoul
     public const int CivicCliqueActs = 5;
     public const int CivicGiveGoalActs = 10;
     public const int CivicSpeechCloutMin = 40;
+
+    // -- M5i: nature & animals (F109-F116) --
+    public const int NatureMinAgeDays = 2190;
+    public const int NatureAdultDays = 6570;
+    public const int NaturePlantFormPerMille = 50;
+    public const int NaturePlantMood = 4;
+    public const int NatureThumbPerMille = 550;
+    public const int NatureThumbMood = 4;
+    public const int NatureMurderMood = -3;
+    public const int NatureCuttingBump = 4;
+    public const int NatureCuttingMood = 3;
+    public const int NatureRosePerMille = 60;
+    public const int NatureRoseMood = 7;
+    public const int NatureBirdFormPerMille = 60;
+    public const int NatureBirdRecurDays = 30;
+    public const int NatureBirdSpotMood = 2;
+    public const int NatureEaglePerMille = 30;
+    public const int NatureEagleMood = 8;
+    public const int NatureHikeFormPerMille = 50;
+    public const int NatureHikeRecurDays = 90;
+    public const int NatureHikeMood = 5;
+    public const int NatureTrailBump = 4;
+    public const int NatureTrailMood = 4;
+    public const int NatureCampMood = 6;
+    public const int NatureTripStoryPerMille = 120;
+    public const int NatureTripStoryMood = 2;
+    public const int NatureFishFormPerMille = 40;
+    public const int NatureFishRecurDays = 45;
+    public const int NatureCatchPerMille = 150;
+    public const int NatureCatchMood = 5;
+    public const int NatureFishStoryPerMille = 250;
+    public const int NatureFishStoryMood = 3;
+    public const int NatureForageFormPerMille = 40;
+    public const int NatureForageSeasonDay = 260;
+    public const int NatureMushMood = 4;
+    public const int NatureBadMushPerMille = 80;
+    public const int NatureBadMushMood = -6;
+    public const int NatureCatFormPerMille = 50;
+    public const int NatureCatMood = 3;
+    public const int NatureAdoptPerMille = 100;
+    public const int NatureAdoptMood = 7;
+    public const int NatureGlowMood = 6;
+    public const int NatureSnowDay = 20;
+    public const int NatureSnowMood = 5;
+    public const int NatureHeatDay = 200;
+    public const int NatureHeatMood = -3;
+    public const int NatureGrayDay = 330;
+    public const int NatureGrayMood = -3;
+    public const int NatureStormDay = 150;
+    public const int NatureStormMood = -4;
+    public const int NatureDriveDay = 100;
+    public const int NatureDriveMood = 4;
+    public const int NatureTreeFightPerMille = 40;
+    public const int NatureTreeSavePerMille = 500;
+    public const int NatureTreeMood = 8;
+    public const int NatureOpenGateMin = 140;
+    public const int NatureWarmGateMin = 140;
     }
 
     /// <summary>Shared one-liners so systems don't each reinvent mood/memory writes.</summary>

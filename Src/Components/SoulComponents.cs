@@ -223,6 +223,35 @@ namespace CitizenSoul
         CrisisHero = 205,        // F108: pulled a neighbor out
         CrisisCohesion = 206,    // F108: grieved with the block
         CrisisTrauma = 207,      // F108: still hears that night
+        // -- M5i: nature & animals (F109-F116) --
+        Planted = 208,           // F109: put in a windowsill garden
+        PlantMurder = 209,       // F109: murdered another houseplant
+        GreenThumb = 210,        // F109: got something to thrive
+        CuttingSwap = 211,       // F109: swapped cuttings with a friend
+        RosePrize = 212,         // F109: grew the prized rose
+        Birding = 213,           // F110: started a life list
+        BirdSpot = 214,          // F110: spotted a rare one
+        EagleNest = 215,         // F110: saw the eagles nesting
+        FirstHike = 216,         // F111: took to the trails
+        TrailFriend = 217,       // F111: made a trail friend
+        CampTrip = 218,          // F111: camped under it all
+        TripStory = 219,         // F111: still tells the near-miss trip story
+        FishingOn = 220,         // F112: started fishing the pier
+        BigCatch = 221,          // F112: the one that got away
+        FishStory = 222,         // F112: retold it, bigger every time
+        ForageOn = 223,          // F113: learned to forage
+        Mushroom = 224,          // F113: a good mushroom season
+        BadMushroom = 225,       // F113: ate the wrong mushroom
+        CatFeeder = 226,         // F114: feeds the street cats now
+        Adopted = 227,           // F114: adopted a rescue
+        GlowUp = 228,            // F114: watched the rescue come back to life
+        FirstSnow = 229,         // F115: delighted in the first snow
+        HeatWave = 230,          // F115: cranked by the heat
+        GrayStreak = 231,        // F115: sagged with the gray
+        StormWorry = 232,        // F115: worried through the storm
+        PlantDrive = 233,        // F116: joined the planting drive
+        TreeFight = 234,         // F116: fought for the old tree
+        TreeSaved = 235,         // F116: kept the old tree standing
         }
 
     /// <summary>Quirk bits packed into SoulPersonality.m_Quirk.</summary>
