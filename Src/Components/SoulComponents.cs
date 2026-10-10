@@ -74,7 +74,16 @@ namespace CitizenSoul
         AffairDiscovered = 58,  // M5a: the truth comes out
         Divorced = 59,          // M5a: the marriage ends
         BecameParent = 60,      // M5a: a child joins the family
-        Grandfamily = 61        // M5a: time spent with grandchildren
+        Grandfamily = 61,  // M5a: time spent with grandchildren
+        // M5b: work & economy (F21-F25, F27, F30)
+        Promoted = 62,           // M5b: earned a step up at work
+        FiredFromJob = 63,       // M5b: lost a job
+        NewJob = 64,             // M5b: started a job
+        HustleStarted = 65,      // M5b: started a side hustle
+        ShopOpened = 66,         // M5b: grew a hustle into a shop
+        Burnout = 67,            // M5b: worked themselves ragged
+        DebtCrunch = 68,         // M5b: money ran tight
+        CharityGiven = 69,       // M5b: helped someone get back on their feet
         }
 
     /// <summary>Quirk bits packed into SoulPersonality.m_Quirk.</summary>

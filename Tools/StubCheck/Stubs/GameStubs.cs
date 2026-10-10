@@ -96,4 +96,10 @@ namespace Game.Citizens
     public struct Followed : IComponentData
     {
     }
+
+    /// <summary>Citizen currently enrolled in school.</summary>
+    public struct Student : IComponentData
+    {
+        public Entity m_School;
+    }
 }

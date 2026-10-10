@@ -247,6 +247,27 @@ namespace CitizenSoul
     public const int DivorceMood = -12;                       // mood at divorce
     public const int GrandHelpPerMille = 300;                 // per-mille daily chance a grandparent helps with grandkids
     public const int GrandHelpMood = 4;                     // mood from grandparent time
+
+    // === M5b: work & economy (F21-F25, F27, F30) ===
+    public const int JobStartMood = 4;               // mood lift of starting a new job
+    public const int PromoteMood = 8;                // mood lift of a promotion
+    public const int FiredMood = -14;                // mood hit of losing a job
+    public const int HustleMood = 3;                 // mood lift of starting a side hustle
+    public const int ShopOpenMood = 12;              // mood lift of opening a shop
+    public const int BurnoutMood = -12;              // mood hit of burning out
+    public const int BurnoutRecoverMood = 6;         // mood when the fog finally lifts
+    public const int DebtMood = -10;                 // mood hit of money trouble
+    public const int CharityMood = 5;                // mood lift of giving
+    public const int PromoteAfterDays = 24;          // days of tenure between raise chances
+    public const int MaxJobLevel = 5;                // top rung of the career ladder
+    public const int PromotePerMille = 8;            // per-mille daily chance of a promotion
+    public const int BurnoutStreakDays = 36;         // work days before burnout can strike
+    public const int BurnoutPerMille = 6;            // per-mille daily chance of burning out
+    public const int BurnoutRecoverPerMille = 25;    // per-mille daily chance of recovering
+    public const int HustlePerMille = 5;             // per-mille daily chance of starting a hustle
+    public const int ShopPerMille = 4;               // per-mille daily chance a hustle becomes a shop
+    public const int DebtPerMille = 5;               // per-mille daily chance of money trouble
+    public const int CharityPerMille = 7;            // per-mille daily chance of giving
     }
 
     /// <summary>Shared one-liners so systems don't each reinvent mood/memory writes.</summary>

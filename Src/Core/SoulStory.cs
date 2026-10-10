@@ -80,6 +80,14 @@ case SoulEventKind.AffairDiscovered: return "got caught living a lie";
 case SoulEventKind.Divorced: return "signed the papers and walked away";
 case SoulEventKind.BecameParent: return "welcomed a child into the family";
 case SoulEventKind.Grandfamily: return "spent the day with the grandchildren";
+case SoulEventKind.Promoted: return "earned a step up at work";
+case SoulEventKind.FiredFromJob: return "lost their job";
+case SoulEventKind.NewJob: return "started a new job";
+case SoulEventKind.HustleStarted: return "started a side hustle";
+case SoulEventKind.ShopOpened: return "opened a shop of their own";
+case SoulEventKind.Burnout: return "worked themselves into the ground";
+case SoulEventKind.DebtCrunch: return "fell behind on money";
+case SoulEventKind.CharityGiven: return "helped someone get back on their feet";
                 default: return "something stirred";
             }
         }
