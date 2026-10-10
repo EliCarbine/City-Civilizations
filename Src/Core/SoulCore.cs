@@ -53,6 +53,12 @@ namespace CitizenSoul
         public const int JournalLanes = 32;
         public const int VitalsLanes = 128;
         public const int DramaLanes = 64;       // M2 adjunct drama lane (F08/F26/F42/F52/F53/F55)
+        public const int MindLanes = 128;       // M3 mental-weather lane (F11/F13/F14/F15)
+        public const int ChronicLanes = 64;     // M3 chronic-condition lane (F17)
+        public const int TherapyLanes = 64;     // M3 counseling lane (F12)
+        public const int StreetLanes = 64;      // M3 street-crime lane (F31-F33)
+        public const int JusticeLanes = 64;     // M3 arrest & prison lane (F35)
+        public const int PetLanes = 64;         // M3 companion-animal lane (F47)
     }
 
     /// <summary>Pure integer math — no Unity.Mathematics dependency, fully unit-testable.</summary>

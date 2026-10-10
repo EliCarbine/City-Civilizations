@@ -42,7 +42,33 @@ namespace CitizenSoul
         FeudStarted = 28,       // F53: a rivalry hardened into an outright feud
         FeudClash = 29,         // F53: a run-in between feuders
         Reconciled = 30,        // F53: two enemies finally let a grudge go
-        WingmanAssist = 31      // F55: a friend nudged two crushes together
+        WingmanAssist = 31,     // F55: a friend nudged two crushes together
+
+        // --- M3: damage, coping, crime, justice, pets (F11-F15, F17, F31-F35, F47) ---
+        Traumatized = 32,       // F11: a moment that cut deep
+        AnniversaryFlare = 33,  // F11: a date that still stings
+        TraumaGrowth = 34,      // F11: post-traumatic growth - a new purpose
+        TherapyStarted = 35,    // F12: first session booked
+        TherapyHelped = 36,     // F12: a session that moved the mood
+        DepressionOnset = 37,   // F13: the grey settled in
+        DepressionLifted = 38,  // F13: the grey broke
+        AnxietySpike = 39,      // F13: crowds became too much
+        CopingHabit = 40,       // F14: stress found a valve
+        HabitEscalated = 41,    // F15: the valve became the master
+        SoberStreak = 42,       // F15: a clean milestone
+        Relapsed = 43,          // F15: the streak broke
+        ChronicDx = 44,         // F17: a diagnosis that sticks
+        ChronicManaged = 45,    // F17: a routine keeping days steady
+        Mourned = 46,           // F11: mourning someone
+        Theft = 47,             // F31: took what wasn't theirs
+        Vandalism = 48,         // F32: left a mark on the city
+        GangJoined = 49,        // F33: found belonging, paid the price
+        Arrested = 50,          // F35: cuffs and consequences
+        TrialConvicted = 51,    // F35: the gavel fell
+        TrialAcquitted = 52,    // F35: walked, barely
+        Released = 53,          // F35: back, changed
+        PetAdopted = 54,        // F47: a warm anchor at home
+        PetDied = 55            // F47: the anchor slipped
         }
 
     /// <summary>Quirk bits packed into SoulPersonality.m_Quirk.</summary>

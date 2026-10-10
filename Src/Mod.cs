@@ -29,7 +29,15 @@ namespace CitizenSoul
             updateSystem.UpdateAfter<RomanceSystem, VitalsSystem>(SystemUpdatePhase.ModificationEnd);
             updateSystem.UpdateAfter<DramaSystem, RomanceSystem>(SystemUpdatePhase.ModificationEnd);
 
-            SoulLog.Info("Citizen Soul loaded: 12 systems registered.");
+            // M3: mental weather, counseling, street crime, justice, companions (F11-F15, F17, F31-F35, F47)
+            updateSystem.UpdateAfter<MindSystem, EmotionSystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<ChronicSystem, MindSystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<TherapySystem, ChronicSystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<StreetSystem, TherapySystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<JusticeSystem, StreetSystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<PetSystem, JusticeSystem>(SystemUpdatePhase.ModificationEnd);
+
+            SoulLog.Info("Citizen Soul loaded: 18 systems registered.");
         }
 
         public void OnDispose()

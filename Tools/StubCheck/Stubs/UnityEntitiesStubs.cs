@@ -103,6 +103,7 @@ namespace Unity.Entities
         public void AddComponentData<T>(Entity entity, T value) where T : struct { }
         public bool RemoveComponent<T>(Entity entity) where T : struct { return true; }
         public DynamicBuffer<T> GetBuffer<T>(Entity entity) where T : struct { return default(DynamicBuffer<T>); }
+        public bool HasBuffer<T>(Entity entity) where T : struct { return true; }
         public DynamicBuffer<T> AddBuffer<T>(Entity entity) where T : struct { return default(DynamicBuffer<T>); }
         public bool IsComponentEnabled<T>(Entity entity) where T : struct { return false; }
         public void SetComponentEnabled<T>(Entity entity, bool value) where T : struct { }

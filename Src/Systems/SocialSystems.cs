@@ -63,6 +63,7 @@ namespace CitizenSoul
                     {
                         if (!em.HasComponent<SoulMeta>(e)) continue;       // mid-init or torn down
                         if (em.IsComponentEnabled<Injured>(e)) continue;   // injured citizens stay home
+                        if (SoulMindGate.Homebound(em, e)) continue;       // M3 F13/F35: withdrawn or imprisoned souls stay home
                         SoulMeta meta = em.GetComponentData<SoulMeta>(e);
                         if (meta.m_LastSocialDay == day) continue;
 
