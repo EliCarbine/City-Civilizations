@@ -85,7 +85,7 @@ namespace CitizenSoul
             // F191 -- school years: every soul builds quietly toward what
             // they might become.
             if (!grown && p.m_Progress < SoulEp2Util.ProgressCap)
-                p.m_Progress = (ushort)Math.Min(SoulEp2Util.ProgressCap, p.m_Progress + 2);
+                p.m_Progress = (ushort)Math.Min(SoulEp2Util.ProgressCap, p.m_Progress + SoulEp2Util.ProgressStudy);
 
             // F192 -- the crossroads at the end of school.
             if (grown && (p.m_Flags & SoulPathFlags.Crossroads) == 0)
@@ -95,19 +95,20 @@ namespace CitizenSoul
                 SoulFeel.Pulse(em, e, 3);
             }
 
-            // F193 -- a dream, chosen or choosing.
-            if (grown && (p.m_Flags & SoulPathFlags.Chosen) == 0)
+            // F193 -- a dream, chosen or choosing. A few are pulled early (SelfStartAge).
+            if ((grown || (age >= SelfStartAge && luck >= SoulEp2Util.SelfMadeLuck)) && (p.m_Flags & SoulPathFlags.Chosen) == 0)
             {
                 bool selfStart = luck >= SoulEp2Util.SelfMadeLuck;
                 if (selfStart || SoulEp2Util.Roll(salt, day, ChoosePerMille))
                 {
                     if (selfStart) p.m_Flags |= SoulPathFlags.SelfMade;
                     p.m_Flags |= SoulPathFlags.Chosen;
-                    p.m_Dream = (byte)SoulEp2Util.Range(salt, day + 1u, 12, 95u);
+                    p.m_Dream = (byte)SoulEp2Util.Range(salt, day + 1u, SoulDreamField.Count, 95u);
                     p.m_ChosenDay = day;
                     SoulFeel.Note(em, e, day, SoulEventKind.ChoseTheRoadOn, (short)p.m_Dream, e);
                     SoulFeel.Pulse(em, e, 6);
                     Scoop(em, SoulWire.Life, 2, p.m_Dream, e, day);
+                    SoulLog.Once("path.dream", "PathSystem: a soul chose " + SoulEp2Util.DreamName(p.m_Dream) + ".");
                 }
             }
 
@@ -116,7 +117,7 @@ namespace CitizenSoul
                 SoulEp2Util.Roll(salt, day + 2u, SoulEp2Util.ReroutePerMille))
             {
                 p.m_Flags |= SoulPathFlags.Rerouted;
-                p.m_Dream = (byte)SoulEp2Util.Range(salt, day + 2u, 12, 96u);
+                p.m_Dream = (byte)SoulEp2Util.Range(salt, day + 2u, SoulDreamField.Count, 96u);
                 if (Gate(em, e, day))
                 {
                     SoulFeel.Note(em, e, day, SoulEventKind.ReroutedOn, (short)p.m_Dream, e);
@@ -136,11 +137,11 @@ namespace CitizenSoul
             // F196 -- progress on the road. Study compounds, luck nudges.
             if ((p.m_Flags & SoulPathFlags.Chosen) != 0 && p.m_Progress < SoulEp2Util.ProgressCap)
             {
-                int gain = SoulEp2Util.ProgressWork + (luck > 0 ? luck / 4 : 0);
+                int gain = SoulEp2Util.ProgressWork + (em.HasComponent<SoulTalent>(e) ? SoulEp2Util.ProgressTalent : 0) + (luck > 0 ? luck / 4 : 0);
                 p.m_Progress = (ushort)Math.Min(SoulEp2Util.ProgressCap, p.m_Progress + Math.Max(1, gain));
             }
 
-            // F197 -- rising, and the rare late bloom alongside it.
+            // F197 -- rising.
             if ((p.m_Flags & SoulPathFlags.Rising) == 0 && p.m_Progress >= SoulEp2Util.RiseAt)
             {
                 p.m_Flags |= SoulPathFlags.Rising;
@@ -148,14 +149,17 @@ namespace CitizenSoul
                 SoulFeel.Note(em, e, day, SoulEventKind.RisingOn, (short)p.m_Progress, e);
                 SoulFeel.Pulse(em, e, 6);
                 Scoop(em, SoulWire.Life, 3, p.m_Progress, e, day);
+            }
 
-                if (p.m_ChosenDay >= meta.m_BirthDay + (uint)SoulEp2Util.TeenDay + 21600u &&
-                    SoulEp2Util.Roll(salt, day + 4u, SoulEp2Util.LateBloomPerMille))
-                {
-                    p.m_Flags |= SoulPathFlags.LateBloom;
-                    SoulFeel.Note(em, e, day, SoulEventKind.LateBloomOn, (short)p.m_Progress, e);
-                    Scoop(em, SoulWire.Life, 3, p.m_Progress, e, day);
-                }
+            // F197b -- the late bloom: crossing late in life, if the coin says so.
+            if ((p.m_Flags & SoulPathFlags.LateBloom) == 0 && (p.m_Flags & SoulPathFlags.Rising) != 0 &&
+                p.m_Progress >= SoulEp2Util.LateBloomAt &&
+                p.m_ChosenDay >= meta.m_BirthDay + (uint)SoulEp2Util.TeenDay + 21600u &&
+                SoulEp2Util.Roll(salt, day + 4u, SoulEp2Util.LateBloomPerMille))
+            {
+                p.m_Flags |= SoulPathFlags.LateBloom;
+                SoulFeel.Note(em, e, day, SoulEventKind.LateBloomOn, (short)p.m_Progress, e);
+                Scoop(em, SoulWire.Life, 3, p.m_Progress, e, day);
             }
 
             // F198 -- the top of the field: talent, work, a little luck.
@@ -167,6 +171,19 @@ namespace CitizenSoul
                 SoulFeel.Note(em, e, day, SoulEventKind.MadeTheTopOn, (short)p.m_Progress, e);
                 SoulFeel.Pulse(em, e, 12);
                 Scoop(em, SoulWire.Life, 4, p.m_Progress, e, day);
+            }
+
+            // F195b -- the shelf is not forever: a shelved dream comes back.
+            if ((p.m_Flags & SoulPathFlags.Chosen) != 0 && (p.m_Flags & SoulPathFlags.Deferred) != 0 &&
+                SoulEp2Util.Roll(salt, day + 9u, SoulEp2Util.RekindlePerMille))
+            {
+                p.m_Flags = (byte)(p.m_Flags & ~SoulPathFlags.Deferred);
+                p.m_ChosenDay = day;
+                if (Gate(em, e, day))
+                {
+                    SoulFeel.Note(em, e, day, SoulEventKind.ChoseTheRoadOn, (short)p.m_Dream, e);
+                    Scoop(em, SoulWire.Life, 3, p.m_Dream, e, day);
+                }
             }
 
             p.m_LastDay = day;

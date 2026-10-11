@@ -96,10 +96,10 @@ namespace CitizenSoul
                     SoulFeel.Note(em, e, day, SoulEventKind.PaidOn, (short)Math.Min(pay, 30000), e);
             }
 
-            // F153 -- the cost of living, every ninth day, staggered so the
+            // F153 -- the cost of living, every UpkeepDay, staggered so the
             // whole city never settles up on one morning.
-            if (grown && (day + salt % 9u) % 9u == 0u)
-                w.m_Balance -= 9;
+            if (grown && (day + salt % (uint)SoulEp2Util.UpkeepDay) % (uint)SoulEp2Util.UpkeepDay == 0u)
+                w.m_Balance -= SoulEp2Util.UpkeepDay;
 
             // F154 -- sudden money, sudden costs. Luck tilts the coin.
             int wind = SoulEp2Util.WindfallPerMille + (luck > 0 ? luck / 4 : 0);

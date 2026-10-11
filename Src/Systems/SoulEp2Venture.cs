@@ -89,7 +89,7 @@ namespace CitizenSoul
             // Closed shop: the rail. A busted soul tries again someday.
             if (c.m_BustDay != 0)
             {
-                if (SoulEp2Util.Roll(salt, day, Math.Max(1, BustRollPerMille)))
+                if (SoulEp2Util.Roll(salt, day, Math.Max(1, SoulEp2Util.RailPerMille)))
                 {
                     c.m_BustDay = 0;
                     c.m_Flags = SoulVentureFlags.Open;
@@ -98,6 +98,7 @@ namespace CitizenSoul
                     c.m_GoodDays = 0;
                     c.m_BadDays = 0;
                     c.m_Staff = 0;
+                    c.m_DaysOpen = 0;
                     c.m_OpenDay = day;
                     if (Gate(ref w, day))
                     {
@@ -118,10 +119,10 @@ namespace CitizenSoul
                 bool selfMade = luck >= SoulEp2Util.SelfMadeLuck;
                 if (!selfMade && w.m_Balance < SoulEp2Util.VentureStake)
                 { c.m_LastDay = day; em.SetComponentData(e, c); return; }
-                if (!SoulEp2Util.Roll(salt, day, 8))
+                if (!SoulEp2Util.Roll(salt, day, SoulEp2Util.VentureStartPerMille))
                 { c.m_LastDay = day; em.SetComponentData(e, c); return; }
                 c.m_Flags = SoulVentureFlags.Open;
-                c.m_Kind = (byte)(1 + SoulEp2Util.Range(salt, day, 8, 30u));
+                c.m_Kind = (byte)(1 + SoulEp2Util.Range(salt, day, SoulVentureKind.Count - 1, 30u));
                 c.m_OpenDay = day;
                 c.m_Health = SoulEp2Util.VentureHealthStart;
                 c.m_Cash = selfMade ? 4 : 12;
@@ -139,7 +140,7 @@ namespace CitizenSoul
             }
 
             // Day to day: sentiment drifts; the till fills or drains.
-            int drift = (int)SoulEp2Util.Range(salt, day, 27, 41u) - 13 + luck / 8;
+            int drift = (int)SoulEp2Util.Range(salt, day, SoulEp2Util.VentureHealthDrift * 2 + 1, 41u) - SoulEp2Util.VentureHealthDrift + luck / 8;
             int health = SoulEp2Util.Clamp(c.m_Health + drift, -100, 100);
             c.m_Health = (sbyte)health;
 
@@ -176,7 +177,7 @@ namespace CitizenSoul
                 }
             }
 
-            if (health >= SoulEp2Util.VentureHireHealth && c.m_Staff < 8 &&
+            if (health >= SoulEp2Util.VentureHireHealth && c.m_Staff < StaffMax &&
                 SoulEp2Util.Roll(salt, day + 2u, 40))
             {
                 c.m_Staff++;
@@ -220,6 +221,7 @@ namespace CitizenSoul
                 h.m_Cost = 12 * bell;
                 h.m_BoughtDay = day;
                 em.AddComponentData(e, h);
+                SoulLog.Once("vent.ipo", "VentureSystem: " + SoulEp2Util.VentureName(c.m_Kind) + " (" + SoulEp2Util.TickerOf(SoulEp2Util.TickerIndex(e)) + ") rang the bell after " + c.m_DaysOpen + " trading days.");
                 if (Gate(ref w, day))
                 {
                     SoulFeel.Note(em, e, day, SoulEventKind.RangBellOn, 12, st);
@@ -242,6 +244,8 @@ namespace CitizenSoul
                     Scoop(em, SoulWire.Venture, 2, 1, e, day);
                 }
             }
+
+            if (c.m_DaysOpen < ushort.MaxValue) c.m_DaysOpen++;
 
             c.m_LastDay = day;
             em.SetComponentData(e, c);

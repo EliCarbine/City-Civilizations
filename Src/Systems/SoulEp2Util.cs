@@ -196,20 +196,32 @@ namespace CitizenSoul
 
         public static string VentureName(byte kind)
         {
-            if (kind == 0 || kind >= VentureNames.Length)
+            switch (kind)
             {
-                return "";
+                case SoulVentureKind.Bakery: return VentureNames[SoulVentureKind.Bakery];
+                case SoulVentureKind.Cafe: return VentureNames[SoulVentureKind.Cafe];
+                case SoulVentureKind.Barbershop: return VentureNames[SoulVentureKind.Barbershop];
+                case SoulVentureKind.PrintShop: return VentureNames[SoulVentureKind.PrintShop];
+                case SoulVentureKind.RecordShop: return VentureNames[SoulVentureKind.RecordShop];
+                case SoulVentureKind.Garage: return VentureNames[SoulVentureKind.Garage];
+                case SoulVentureKind.FoodTruck: return VentureNames[SoulVentureKind.FoodTruck];
+                case SoulVentureKind.FlowerStand: return VentureNames[SoulVentureKind.FlowerStand];
+                default: return "";
             }
-            return VentureNames[kind];
         }
 
         public static string DreamName(byte d)
         {
-            if (d == 0 || d >= DreamNames.Length)
+            switch (d)
             {
-                return "a mystery";
+                case SoulDreamField.Arts: return DreamNames[SoulDreamField.Arts];
+                case SoulDreamField.Craft: return DreamNames[SoulDreamField.Craft];
+                case SoulDreamField.Trade: return DreamNames[SoulDreamField.Trade];
+                case SoulDreamField.Business: return DreamNames[SoulDreamField.Business];
+                case SoulDreamField.Sport: return DreamNames[SoulDreamField.Sport];
+                case SoulDreamField.Knowledge: return DreamNames[SoulDreamField.Knowledge];
+                default: return DreamNames[0];
             }
-            return DreamNames[d];
         }
 
         /// <summary>F183: file a scoop. Anyone may write the wire buffer.</summary>

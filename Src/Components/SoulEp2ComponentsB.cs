@@ -33,8 +33,8 @@ namespace CitizenSoul
         public static SoulExchange Fresh(uint day)
         {
             SoulExchange x = default(SoulExchange);
-            x.m_Index = 1000;
-            x.m_PrevClose = 1000;
+            x.m_Index = SoulEp2Util.ExchangeSeed;
+            x.m_PrevClose = SoulEp2Util.ExchangeSeed;
             x.m_LastDay = day;
             return x;
         }

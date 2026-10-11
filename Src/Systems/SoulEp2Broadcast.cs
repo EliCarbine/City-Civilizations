@@ -108,7 +108,7 @@ namespace CitizenSoul
 
                     if (lineup.Length == 0) continue;
                     SoulAir air = lineup[(int)((h / 1000) % (uint)lineup.Length)];
-                    if (air.m_Kind == 0) continue;
+                    if (air.m_Kind == SoulShowKind.News) continue;
 
                     bool fresh = !em.HasComponent<SoulViewer>(e);
                     SoulViewer v;
@@ -127,6 +127,7 @@ namespace CitizenSoul
 
                     v.m_Flags |= SoulViewerFlags.Watcher;
                     v.m_LastWatchDay = day;
+                    if (v.m_Watched < ushort.MaxValue) v.m_Watched++;
 
                     // Caught the premiere itself.
                     if (air.m_PremiereDay == day)
@@ -163,20 +164,32 @@ namespace CitizenSoul
         private void RollSeason(Entity tv, DynamicBuffer<SoulAir> lineup, uint day, uint season)
         {
             lineup.Clear();
-            uint seed = Hash(tv, season * 7919u);
+            SoulTv stv = EntityManager.GetComponentData<SoulTv>(tv);
+            uint seed = Hash(tv, season * 7919u + (uint)stv.m_Seed1 * 1009u + (uint)stv.m_Seed2 * 1013u);
             for (int i = 0; i < LineupSize; i++)
             {
                 uint hh = Hash(tv, seed + (uint)(i + 1) * 2654435761u);
                 SoulAir air = default(SoulAir);
-                air.m_Kind = (byte)(1 + (i % 3)); // SoulShowKind slot: nothing airs empty
+                air.m_Kind = (byte)(SoulShowKind.Drama + (i % (SoulShowKind.Count - 1))); // F179: the lineup walks the genres
                 air.m_Name1 = (byte)(hh % 24);
                 air.m_Name2 = (byte)((hh / 24) % 24);
                 air.m_ShowId = (byte)((hh / 24 / 24) % 24);
                 air.m_Hotness = 30;
                 air.m_PremiereDay = day;
                 lineup.Add(air);
+                if (air.m_Kind == SoulShowKind.Cartoon)
+                    SoulLog.Once("tv.cartoon." + season, "BroadcastSystem: " + SoulEp2Util.CartoonTitle(air.m_ShowId) + " airs this season.");
             }
-            SoulLog.Once("tv.season." + season, "BroadcastSystem: season " + season + " premiered.");
+            SoulLog.Once("tv.season." + season, "BroadcastSystem: season " + season + " premiered -- " + SoulEp2Util.ShowTitle(lineup[0].m_Name1, lineup[0].m_Name2) + " (" + KindName(lineup[0].m_Kind) + ") leads it.");
+        }
+
+        private static string KindName(byte kind)
+        {
+            if (kind == SoulShowKind.Drama) return "drama";
+            if (kind == SoulShowKind.Comedy) return "comedy";
+            if (kind == SoulShowKind.Reality) return "reality";
+            if (kind == SoulShowKind.Cartoon) return "cartoons";
+            return "news";
         }
 
         private void Scoop(EntityManager em, byte prio, int value, Entity about, uint day)

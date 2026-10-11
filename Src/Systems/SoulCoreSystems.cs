@@ -145,6 +145,8 @@ namespace CitizenSoul
                 for (int i = 0; i < members.Length; i++)
                     LinkFamily(em, e, members[i].m_Citizen, day);
             }
+
+            SoulFeel.Note(em, e, day, SoulEventKind.Born, 0, e);
             return true;
         }
 

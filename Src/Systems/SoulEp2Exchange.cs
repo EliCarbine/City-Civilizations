@@ -140,9 +140,9 @@ namespace CitizenSoul
                         price = SoulEp2Util.Clamp(price + step, 5, 5000);
 
                         if (price * 4 <= before * 3)
-                            Scoop(em, SoulWire.Market, 3, price, s, day);
+                            Scoop(em, SoulWire.Market, 3, price, st.m_Owner != Entity.Null && em.Exists(st.m_Owner) ? st.m_Owner : s, day);
                         else if (before * 4 <= price * 3)
-                            Scoop(em, SoulWire.Market, 2, price, s, day);
+                            Scoop(em, SoulWire.Market, 2, price, st.m_Owner != Entity.Null && em.Exists(st.m_Owner) ? st.m_Owner : s, day);
 
                         if (SoulEp2Util.Range(SoulEp2Util.Salt(s), d ^ 7u, 3, 42u) == 0u)
                             vol = SoulEp2Util.Clamp(vol + (SoulEp2Util.Range(SoulEp2Util.Salt(s), d ^ 5u, 2, 43u) == 0u ? -1 : 1), 1, 5);
