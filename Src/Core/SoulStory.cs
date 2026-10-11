@@ -424,7 +424,7 @@ default: return "something stirred";
             View v = default(View);
             if (!em.HasComponent<SoulMeta>(e))
             {
-                v.Summary = "(no soul)";
+                v.Summary = SoulLocale.Get("INSPECTOR_NO_SOUL");
                 return v;
             }
 
@@ -447,41 +447,40 @@ default: return "something stirred";
             if (em.HasComponent<SoulPersonality>(e))
             {
                 SoulPersonality per = em.GetComponentData<SoulPersonality>(e);
-                traits = " extrav " + per.m_Extraversion + ", consist " + per.m_Conscientiousness;
+                traits = SoulLocale.Fmt("INSPECTOR_TRAITS_FMT", per.m_Extraversion, per.m_Conscientiousness);
             }
             int valence = 0;
             if (em.HasComponent<Mood>(e)) valence = em.GetComponentData<Mood>(e).m_Valence;
-            v.Summary = "mood " + valence + "; ties " + ties + " (best " + best + ", worst " + worst + ");" + traits;
+            v.Summary = SoulLocale.Fmt("INSPECTOR_SUMMARY_FMT", valence, ties, best, worst, traits);
 
             string details = "";
             if (em.HasComponent<SoulMind>(e))
             {
                 SoulMind m = em.GetComponentData<SoulMind>(e);
-                details = "trauma " + m.m_Trauma + ", depression " + m.m_Depression + ", worry " + m.m_Worry + ", addiction " + m.m_Addiction;
-                if ((m.m_Flags & SoulMind.FlagInTherapy) != 0) details += ", in therapy";
+                details = SoulLocale.Fmt("INSPECTOR_MIND_FMT", m.m_Trauma, m.m_Depression, m.m_Worry, m.m_Addiction);
+                if ((m.m_Flags & SoulMind.FlagInTherapy) != 0) details += SoulLocale.Get("INSPECTOR_THERAPY");
             }
             if (em.HasComponent<SoulPet>(e))
             {
                 SoulPet pt = em.GetComponentData<SoulPet>(e);
-                if (pt.m_Kind != 0) details += "; companion kind " + pt.m_Kind + " (bond " + pt.m_Bond + ")";
+                if (pt.m_Kind != 0) details += SoulLocale.Fmt("INSPECTOR_PET_FMT", pt.m_Kind, pt.m_Bond);
             }
             if (em.HasComponent<SoulChronic>(e))
             {
                 SoulChronic c = em.GetComponentData<SoulChronic>(e);
-                if (c.m_Kind != 0) details += "; managing condition " + c.m_Kind;
+                if (c.m_Kind != 0) details += SoulLocale.Fmt("INSPECTOR_CONDITION_FMT", c.m_Kind);
             }
             if (em.HasComponent<SoulCrime>(e))
             {
                 SoulCrime c = em.GetComponentData<SoulCrime>(e);
-                if (c.m_Notoriety > 0 || c.m_Records > 0) details += "; notoriety " + c.m_Notoriety + ", convictions " + c.m_Records;
+                if (c.m_Notoriety > 0 || c.m_Records > 0) details += SoulLocale.Fmt("INSPECTOR_CRIME_FMT", c.m_Notoriety, c.m_Records);
             }
             v.Details = details;
 
             if (em.HasComponent<Skills>(e))
             {
                 Skills sk = em.GetComponentData<Skills>(e);
-                v.Skills = "social " + (sk.m_Social / 100) + ", fitness " + (sk.m_Fitness / 100)
-                    + ", logic " + (sk.m_Logic / 100) + ", craft " + (sk.m_Craft / 100);
+                v.Skills = SoulLocale.Fmt("INSPECTOR_SKILLS_FMT", sk.m_Social / 100, sk.m_Fitness / 100, sk.m_Logic / 100, sk.m_Craft / 100);
             }
 
             List<string> lines = new List<string>();

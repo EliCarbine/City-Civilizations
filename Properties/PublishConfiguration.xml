@@ -1,0 +1,50 @@
+<Publish>
+	<!--Id must be set in order to update existed mod. it is not required for publishing mod for the first time-->
+	<ModId Value="" />
+	<!--Name of the mod to display to players-->
+	<DisplayName Value="Citizen Soul" />
+	<!--Short description of the mod-->
+	<ShortDescription Value="Every citizen gets a persistent personality, memory, relationships, moods, skills, and a life story you can follow. Friends drift apart, kids grow up, couples form and break, people get hurt, learn, grieve, and celebrate." />
+	<!--Long description of the mod. Single line or multi line. Supports minimal markdown subset-->
+	<LongDescription>
+Give your city a soul. Citizen Soul layers a full simulated inner life on top of every CS2 citizen — no two are the same, and none of them forget.
+
+**What each citizen gets**
+* A generated personality (extroversion, conscientiousness) that biases how they live every day
+* Friendships, rivalries, romance, heartbreak, and family ties that evolve day by day
+* Moods that react to what happens to them — good days, bad days, grief, joy, stress
+* Skills (social, fitness, logic, craft) that grow from daily learning
+* Injuries and recovery, fights, therapy, bad habits, and fresh starts
+* Pets, hobbies, city quirks, coming-of-age rituals, and milestones from first school day to old age
+* A diary you can actually read — follow any citizen and watch their story unfold
+
+**Player tools**
+* Follow panel — pick a citizen and watch their life in real time
+* Inspector — read mood, ties, skills, and recent events of anyone in the city
+* options.ini next to the mod dll — master switch plus 18 feature groups you can toggle
+* Localization — override any string with a lang/&lt;culture&gt;.json file
+* Perf reporting — one log summary every 5 minutes so big cities stay honest
+
+**Compatibility**
+* Works with existing cities — citizens get souls on load
+* No save format changes beyond the mod's own component data; disabling the mod is safe
+* Built and tested for game version 1.1.*
+
+Make your city feel human.
+	</LongDescription>
+	<!--Thumbnail-->
+	<Thumbnail Value="Properties/Thumbnail.png" />
+	<!--Tag, can be set multiple times-->
+	<Tag Value="Code Mod" />
+	<Tag Value="Gameplay" />
+	<!--Link to the forum post where the mod can be discussed-->
+	<ForumLink Value="" />
+	<!--Version of the mod-->
+	<ModVersion Value="1.0.0" />
+	<!--Recommended version of the base game to use the mod-->
+	<GameVersion Value="1.1.*" />
+	<!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
+	<ChangeLog Value="First public release — 151 features across 34 systems: personality, social life, romance and family, mind and mood, crime and justice, work, culture, media, rituals, companions, diary and panels. Includes options.ini config, localization, and the 5-minute perf report." />
+	<!--External link. supported types are discord, github, youtube, twitch, x, paypal, patreon-->
+	<ExternalLink Type="github" Url="https://github.com/EliCarbine/City-Civilizations" />
+</Publish>

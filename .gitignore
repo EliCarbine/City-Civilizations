@@ -10,3 +10,6 @@ obj/
 
 # Derived docs — regenerate from the Markdown sources via the docx pipeline
 *.docx
+
+# Publish staging (ModPublisher.exe input/output)
+.publish/

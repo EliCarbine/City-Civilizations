@@ -14,6 +14,8 @@ namespace CitizenSoul
     ///     system disables itself instead of spamming or stalling the city.
     ///   - AdvanceDay() owns the shared day/lane clock so every system processes
     ///     citizens in staggered slices instead of all at once (5% overhead goal).
+    ///   - M6: the options.ini gate can switch the system off by group, and every
+    ///     pass is timed by SoulPerf for the 5-minute perf report (see PERF.md).
     /// </summary>
     public abstract class SoulSystemBase : GameSystemBase
     {
@@ -38,6 +40,8 @@ namespace CitizenSoul
         protected sealed override void OnUpdate()
         {
             if (_disabled) return;
+            if (!SoulOptions.SystemEnabled(GetType().Name)) return; // M6: options.ini gate
+            long t0 = SoulPerf.Begin();
             try
             {
                 OnSoulUpdate();
@@ -50,6 +54,10 @@ namespace CitizenSoul
                 {
                     DisableSelf("3 faults");
                 }
+            }
+            finally
+            {
+                SoulPerf.Record(GetType().Name, t0);
             }
         }
 

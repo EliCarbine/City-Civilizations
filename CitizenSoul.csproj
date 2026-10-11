@@ -8,6 +8,7 @@
     <LangVersion>latest</LangVersion>
     <AssemblyName>CitizenSoul</AssemblyName>
     <RootNamespace>CitizenSoul</RootNamespace>
+    <Version>1.0.0</Version>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <!-- Path to the game install (edit per machine; Wine prefix or Windows) -->
     <GameDir Condition="'$(GameDir)' == ''">C:\Program Files (x86)\Steam\steamapps\common\Cities Skylines II</GameDir>
@@ -33,6 +34,11 @@
       <Private>false</Private>
     </Reference>
     <!-- Unity.Mathematics, Unity.Collections, Unity.Burst as needed -->
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Runtime files that must sit next to the dll at deploy time (localization). -->
+    <None Include="lang/**" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>

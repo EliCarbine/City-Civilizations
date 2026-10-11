@@ -1,0 +1,12 @@
+{
+  "CitizenSoul.PANEL_EMPTY": "(no soul followed)",
+  "CitizenSoul.INSPECTOR_NO_SOUL": "(no soul)",
+  "CitizenSoul.INSPECTOR_SUMMARY_FMT": "mood {0}; ties {1} (best {2}, worst {3});{4}",
+  "CitizenSoul.INSPECTOR_TRAITS_FMT": " extrav {0}, consist {1}",
+  "CitizenSoul.INSPECTOR_MIND_FMT": "trauma {0}, depression {1}, worry {2}, addiction {3}",
+  "CitizenSoul.INSPECTOR_THERAPY": ", in therapy",
+  "CitizenSoul.INSPECTOR_PET_FMT": "; companion kind {0} (bond {1})",
+  "CitizenSoul.INSPECTOR_CONDITION_FMT": "; managing condition {0}",
+  "CitizenSoul.INSPECTOR_CRIME_FMT": "; notoriety {0}, convictions {1}",
+  "CitizenSoul.INSPECTOR_SKILLS_FMT": "social {0}, fitness {1}, logic {2}, craft {3}"
+}

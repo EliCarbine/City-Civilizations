@@ -1,35 +1,57 @@
-# Citizen Soul (working title) — CS2 mod scaffold
+# Citizen Soul — a living population for Cities: Skylines II
 
+Every citizen gets a persistent personality, memory, relationships, moods, skills, and a
+life story you can follow. Friends drift apart, kids grow up, couples form and break,
+people get hurt, learn, grieve, and celebrate.
+
+**v1.0.0 (M6 Ship) — 151 features across 34 systems.**
+
+## What it does
+- **Personality** — each citizen gets a generated temperament that biases daily life
+- **Social** — friendships, rivalries, fights, and memory of who did what to whom
+- **Romance & family** — dating, couples, breakups, children, dynasties, memorials
+- **Mind & mood** — moods, trauma, therapy, chronic conditions, addiction and recovery
+- **Crime & justice** — street life, notoriety, convictions, reentry
+- **Work, culture, sports, curiosity, civic life** — hobbies, arts, tech, nature
+- **Companions** — pets with bonded names you can see in the inspector
+- **Rituals & milestones** — first school day, coming of age, weddings, old age
+- **Media** — city media, and a diary you can read from the follow panel
+
+## Player tools
+- **Follow panel / inspector** — pick any citizen; read mood, ties, skills, recent events
+- **options.ini** (created next to the mod dll on first load) — master switch + 18
+  feature groups; restart the game after editing
+- **Localization** — built-in en-US; override any string via `lang/<culture>.json`
+- **Perf report** — one log summary every 5 minutes; warns when a system exceeds its
+  per-pass budget (see PERF.md)
+
+## Repo layout
 ```
-DESIGN.md          ← full spec: architecture, roadmap, persistence plan
-FEATURES.md        ← 61-feature catalog: the full "real human" roster + engine mapping
-FEATURES-2.md      ← Part II: 90 more (F62–F151) + addenda
-Citizen-Soul-Feature-List.md  ← consolidated catalog: all 151 features in one document
-CitizenSoul.csproj ← project skeleton (verify TFM + reference paths vs official template)
-Src/Mod.cs         ← IMod entry; registers all systems
-Src/Components/    ← soul data structs (ISerializable patterns from verified game code)
-Src/Systems/       ← sim systems (init, learning, social, fights, emotion)
+Src/                 mod source (34 systems, components, core logic)
+lang/en-US.json      localization file that ships with the mod
+Properties/          PublishConfiguration.xml + store Thumbnail.png
+Tools/StubCheck/     offline compile-check harness (no game install needed)
+Tools/make_thumbnail.py   regenerates the store thumbnail
+DESIGN.md            architecture, persistence plan, roadmap
+FEATURES.md          feature catalog part I (F01–F61)
+FEATURES-2.md        feature catalog part II (F62–F151) + addenda
+Citizen-Soul-Feature-List.md   consolidated catalog (all 151)
+PERF.md              performance gate: measurement, acceptance, tuning
+PUBLISHING.md        Paradox Mods release checklist
 ```
 
-## Status: scaffold
-Source structure + API-correct skeletons based on documented patterns (ps1ke guide, official
-wiki). It is **not compiled yet** — it needs the official CS2 modding toolchain, which
-provides the game assembly references.
+## Build
+- **Compile check (macOS/Linux, no game needed):**
+  `dotnet build Tools/StubCheck/CitizenSoul.StubCheck.csproj`
+- **Full build (machine with the game + CS2 Modding Toolchain):**
+  `dotnet build CitizenSoul.csproj -c Release -p:GameDir="<install dir>"`
+  (ships `lang/` next to the dll per the csproj copy rule)
+- **Deploy:** toolchain local mods folder; the game creates `options.ini` there on
+  first load.
+- **Publish:** see PUBLISHING.md.
 
-## Build (once toolchain is installed)
-1. Install CS2 Modding Toolchain (cs2.paradoxwikis.com/Modding_Toolchain) + project template.
-2. Compare this csproj against the template's — align TFM + assembly reference paths.
-3. `dotnet build` → deploy DLL to the local mods folder per toolchain docs.
-4. Launch CS2, enable mod, load/create city.
-
-## M0 spike (the go/no-go experiment)
-`SoulSpike` component (see Src/Components/SoulComponents.cs) is a one-counter probe:
-1. Build + run with the spike system enabled (it bumps the counter daily).
-2. Save the city, fully exit, reload.
-3. Log should show the counter continuing — proving mod components ride the save.
-4. If it resets to 0: switch persistence to the fallback plan (DESIGN.md §3.3).
-
-## Mac dev note
-Game runs on Apple Silicon via Wine 11 + DXMT (verified report, in-game mod downloads work).
-Compile natively with dotnet against assemblies copied from the Wine install; test in the Wine
-game. Windows VM for publish QA if needed.
+## Status
+- **M0–M6 complete** — M6 Ship added the Paradox Mods publish config, options.ini,
+  localization, and the perf gate.
+- **EP1 (City Life, ~12 features)** — planned post-ship: city-wide media, culture,
+  deep crime (see DESIGN.md roadmap).

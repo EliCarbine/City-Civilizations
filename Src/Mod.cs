@@ -13,7 +13,10 @@ namespace CitizenSoul
     {
         public void OnLoad(UpdateSystem updateSystem)
         {
-            SoulLog.Info("Citizen Soul loading (M0/M1 system roster)...");
+            SoulOptions.Load();
+            SoulLog.Info("Citizen Soul 1.0.0 loading...");
+            SoulLog.Info(SoulOptions.DescribeState());
+            SoulLog.Info(SoulLocale.DescribeState());
 
             updateSystem.UpdateBefore<SoulInitializeSystem>(SystemUpdatePhase.ModificationEnd);
 

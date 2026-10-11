@@ -21,7 +21,7 @@ namespace CitizenSoul
 
         private static readonly SoulInspector.View EmptyView = new SoulInspector.View
         {
-            Summary = "(no soul followed)",
+            Summary = SoulLocale.Get("PANEL_EMPTY"),
             Details = "",
             Skills = "",
             Recent = ""
@@ -47,6 +47,7 @@ namespace CitizenSoul
 
         protected override void OnUpdate()
         {
+            if (!SoulOptions.IsOn("ui")) return; // M6: options.ini gate
             try
             {
                 m_Tick++;
