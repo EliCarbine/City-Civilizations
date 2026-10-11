@@ -18,6 +18,7 @@ namespace CitizenSoul
 
         private EntityQuery m_All;
         private EntityQuery m_Desk;
+        private bool m_DreamLogged;
 
         protected override int Interval { get { return 4096; } }
         protected override int Lanes { get { return 64; } }
@@ -108,7 +109,11 @@ namespace CitizenSoul
                     SoulFeel.Note(em, e, day, SoulEventKind.ChoseTheRoadOn, (short)p.m_Dream, e);
                     SoulFeel.Pulse(em, e, 6);
                     Scoop(em, SoulWire.Life, 2, p.m_Dream, e, day);
-                    SoulLog.Once("path.dream", "PathSystem: a soul chose " + SoulEp2Util.DreamName(p.m_Dream) + ".");
+                    if (!m_DreamLogged)
+                    {
+                        m_DreamLogged = true;
+                        SoulLog.Info("PathSystem: a soul chose " + SoulEp2Util.DreamName(p.m_Dream) + ".");
+                    }
                 }
             }
 

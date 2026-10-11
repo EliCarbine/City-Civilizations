@@ -48,7 +48,7 @@ namespace CitizenSoul
                 {
                     Entity reg = em.CreateEntity();
                     em.AddComponentData(reg, SoulEconomy.Fresh());
-                    SoulLog.Once("work.registry", "WorkSystem: economy registry created.");
+                    SoulLog.Info("WorkSystem: economy registry created.");
                 }
             }
             catch (Exception ex)

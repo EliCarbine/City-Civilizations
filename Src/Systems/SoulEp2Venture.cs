@@ -221,7 +221,7 @@ namespace CitizenSoul
                 h.m_Cost = 12 * bell;
                 h.m_BoughtDay = day;
                 em.AddComponentData(e, h);
-                SoulLog.Once("vent.ipo", "VentureSystem: " + SoulEp2Util.VentureName(c.m_Kind) + " (" + SoulEp2Util.TickerOf(SoulEp2Util.TickerIndex(e)) + ") rang the bell after " + c.m_DaysOpen + " trading days.");
+                SoulLog.Info("VentureSystem: " + SoulEp2Util.VentureName(c.m_Kind) + " (" + SoulEp2Util.TickerOf(SoulEp2Util.TickerIndex(e)) + ") rang the bell after " + c.m_DaysOpen + " trading days.");
                 if (Gate(ref w, day))
                 {
                     SoulFeel.Note(em, e, day, SoulEventKind.RangBellOn, 12, st);

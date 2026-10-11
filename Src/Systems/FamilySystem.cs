@@ -50,7 +50,7 @@ namespace CitizenSoul
                 {
                     Entity reg = em.CreateEntity();
                     em.AddComponentData(reg, SoulDynasty.Fresh());
-                    SoulLog.Once("family.registry", "FamilySystem: dynasty registry created.");
+                    SoulLog.Info("FamilySystem: dynasty registry created.");
                 }
             }
             catch (Exception ex)

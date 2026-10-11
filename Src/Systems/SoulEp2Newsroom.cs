@@ -52,7 +52,7 @@ namespace CitizenSoul
                 em.AddComponentData(d, SoulNews.Fresh(day));
                 em.AddBuffer<SoulScoop>(d);
                 em.AddBuffer<SoulHeadline>(d);
-                SoulLog.Once("desk.registry", "NewsroomSystem: the news desk opened.");
+                SoulLog.Info("NewsroomSystem: the news desk opened.");
                 return;
             }
             if (m_Desk.CalculateEntityCount() != 1) return;

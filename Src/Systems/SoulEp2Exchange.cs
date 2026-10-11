@@ -66,7 +66,7 @@ namespace CitizenSoul
             {
                 Entity reg = em.CreateEntity();
                 em.AddComponentData(reg, SoulExchange.Fresh(day));
-                SoulLog.Once("exchange.registry", "ExchangeSystem: exchange registry created.");
+                SoulLog.Info("ExchangeSystem: exchange registry created.");
                 return;
             }
             if (m_Exchange.CalculateEntityCount() != 1) return;

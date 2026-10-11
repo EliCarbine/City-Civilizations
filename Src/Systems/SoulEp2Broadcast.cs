@@ -60,7 +60,7 @@ namespace CitizenSoul
                 em.AddBuffer<SoulAir>(reg);
                 DynamicBuffer<SoulAir> fresh = em.GetBuffer<SoulAir>(reg);
                 RollSeason(reg, fresh, day, 1);
-                SoulLog.Once("tv.registry", "BroadcastSystem: the city's screen switched on.");
+                SoulLog.Info("BroadcastSystem: the city's screen switched on.");
                 return;
             }
             if (m_Tv.CalculateEntityCount() != 1) return;
@@ -178,9 +178,9 @@ namespace CitizenSoul
                 air.m_PremiereDay = day;
                 lineup.Add(air);
                 if (air.m_Kind == SoulShowKind.Cartoon)
-                    SoulLog.Once("tv.cartoon." + season, "BroadcastSystem: " + SoulEp2Util.CartoonTitle(air.m_ShowId) + " airs this season.");
+                    SoulLog.Info("BroadcastSystem: " + SoulEp2Util.CartoonTitle(air.m_ShowId) + " airs this season.");
             }
-            SoulLog.Once("tv.season." + season, "BroadcastSystem: season " + season + " premiered -- " + SoulEp2Util.ShowTitle(lineup[0].m_Name1, lineup[0].m_Name2) + " (" + KindName(lineup[0].m_Kind) + ") leads it.");
+            SoulLog.Info("BroadcastSystem: season " + season + " premiered -- " + SoulEp2Util.ShowTitle(lineup[0].m_Name1, lineup[0].m_Name2) + " (" + KindName(lineup[0].m_Kind) + ") leads it.");
         }
 
         private static string KindName(byte kind)
