@@ -21,14 +21,7 @@
       <HintPath>$(GameManagedDir)\Game.dll</HintPath>
       <Private>false</Private>
     </Reference>
-    <Reference Include="Colossal.Core">
-      <HintPath>$(GameManagedDir)\Colossal.Core.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-    <Reference Include="Colossal.Serialization.Entities">
-      <HintPath>$(GameManagedDir)\Colossal.Serialization.Entities.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
+    <!-- Colossal.Core / Colossal.Mathematics / Colossal.UI* covered by the wildcard reference block at the bottom of this file. -->
     <Reference Include="Unity.Entities">
       <HintPath>$(GameManagedDir)\Unity.Entities.dll</HintPath>
       <Private>false</Private>
@@ -45,7 +38,7 @@
     <!-- Dev-only: Tools/StubCheck is an offline compile-check harness, not shipped with the mod. -->
     <Compile Remove="Tools/**/*.cs" />
   </ItemGroup>
-  <!-- Game/engine assemblies needed for Windows build (Unity.Collections, Unity.Mathematics, UnityEngine, Colossal.UI) -->
+  <!-- Game/engine assemblies needed for Windows build (Unity.Collections/Mathematics, UnityEngine, all Colossal.*) -->
   <PropertyGroup>
     <GameDir Condition="'$(GameDir)' == ''">C:\Program Files (x86)\Steam\steamapps\common\Cities Skylines II</GameDir>
     <GameManagedDir Condition="'$(GameManagedDir)' == ''">$(GameDir)\Cities2_Data\Managed</GameManagedDir>
@@ -60,7 +53,7 @@
     <Reference Include="$(GameManagedDir)\UnityEngine.CoreModule.dll">
       <Private>false</Private>
     </Reference>
-    <Reference Include="$(GameManagedDir)\Colossal.UI*.dll">
+    <Reference Include="$(GameManagedDir)\Colossal.*.dll">
       <Private>false</Private>
     </Reference>
   </ItemGroup>

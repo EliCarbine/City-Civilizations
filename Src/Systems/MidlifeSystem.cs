@@ -246,7 +246,7 @@ namespace CitizenSoul
 
         private static byte PickWish(EntityManager em, Entity e, uint day, uint salt)
         {
-            Span<byte> candidates = stackalloc byte[5];
+            byte[] candidates = new byte[5];
             int n = 0;
 
             if (em.HasComponent<SoulReentry>(e))
