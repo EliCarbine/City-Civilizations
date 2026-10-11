@@ -57,9 +57,33 @@ namespace CitizenSoul
             updateSystem.UpdateAfter<TravelSystem, TempoSystem>(SystemUpdatePhase.ModificationEnd);
             updateSystem.UpdateAfter<MediaSystem, TravelSystem>(SystemUpdatePhase.ModificationEnd);
             updateSystem.UpdateAfter<RitualsSystem, MediaSystem>(SystemUpdatePhase.ModificationEnd);
+
+            // EP1: fate & appetite (F20, F28, F29, F34, F37)
+            updateSystem.UpdateAfter<MortalitySystem, RitualsSystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<StrikeSystem, MortalitySystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<GamblingSystem, StrikeSystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<CrimeSystem, GamblingSystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<CorruptionSystem, CrimeSystem>(SystemUpdatePhase.ModificationEnd);
+
+            // EP1: routines, food, faith (F39, F40, F41)
+            updateSystem.UpdateAfter<RoutineSystem, CorruptionSystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<FoodSystem, RoutineSystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<FaithSystem, FoodSystem>(SystemUpdatePhase.ModificationEnd);
+
+            // EP1: culture & collective life (F44-F46, F48-F51, F54, F59)
+            updateSystem.UpdateAfter<NightlifeSystem, FaithSystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<FandomSystem, NightlifeSystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<FashionSystem, FandomSystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<HolidaySystem, FashionSystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<HoodSystem, HolidaySystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<GossipSystem, HoodSystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<ReputationSystem, GossipSystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<MentorSystem, ReputationSystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<ChronicleSystem, MentorSystem>(SystemUpdatePhase.ModificationEnd);
+
             updateSystem.UpdateAt<SoulPanelUISystem>(SystemUpdatePhase.UIUpdate);
 
-            SoulLog.Info("Citizen Soul loaded: 34 systems registered.");
+            SoulLog.Info("Citizen Soul loaded: 51 systems registered.");
         }
 
         public void OnDispose()

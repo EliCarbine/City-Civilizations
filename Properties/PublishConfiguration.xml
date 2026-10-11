@@ -17,6 +17,7 @@ Give your city a soul. Citizen Soul layers a full simulated inner life on top of
 * Injuries and recovery, fights, therapy, bad habits, and fresh starts
 * Pets, hobbies, city quirks, coming-of-age rituals, and milestones from first school day to old age
 * A diary you can actually read — follow any citizen and watch their story unfold
+* City-wide life — holidays and seasons, nightlife, fandoms, fashion, food culture, faith, neighborhood character, gossip, reputation, and a city chronicle
 
 **Player tools**
 * Follow panel — pick a citizen and watch their life in real time
@@ -44,7 +45,7 @@ Make your city feel human.
 	<!--Recommended version of the base game to use the mod-->
 	<GameVersion Value="1.1.*" />
 	<!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
-	<ChangeLog Value="First public release — 151 features across 34 systems: personality, social life, romance and family, mind and mood, crime and justice, work, culture, media, rituals, companions, diary and panels. Includes options.ini config, localization, and the 5-minute perf report." />
+	<ChangeLog Value="First public release — 151 features across 51 systems: personality, social life, romance and family, mind and mood, crime and justice, work, culture, media, rituals, companions, diary and panels. Includes the EP1 City Life expansion — mortality, strikes, gambling, organized crime, corruption, routines, food, faith, nightlife, fandoms, fashion, holidays, neighborhood character, gossip, reputation, mentorship, and the city chronicle — plus options.ini config, localization, and the 5-minute perf report." />
 	<!--External link. supported types are discord, github, youtube, twitch, x, paypal, patreon-->
 	<ExternalLink Type="github" Url="https://github.com/EliCarbine/City-Civilizations" />
 </Publish>

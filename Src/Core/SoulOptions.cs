@@ -121,6 +121,16 @@ namespace CitizenSoul
             Map("media", "MediaSystem");
             Map("rituals", "RitualsSystem");
             Map("ui", "SoulPanelUISystem");
+            // EP1 (City Life): extended-play systems join their home groups.
+            Map("family", "MortalitySystem");
+            Map("work", "StrikeSystem", "MentorSystem");
+            Map("crime", "GamblingSystem", "CrimeSystem", "CorruptionSystem");
+            Map("tempo", "RoutineSystem");
+            Map("culture", "FoodSystem", "FandomSystem", "FashionSystem");
+            Map("rituals", "FaithSystem", "HolidaySystem");
+            Map("civic", "HoodSystem");
+            Map("social", "GossipSystem", "ReputationSystem", "NightlifeSystem");
+            Map("media", "ChronicleSystem");
         }
 
         private static void Map(string group, params string[] systems)

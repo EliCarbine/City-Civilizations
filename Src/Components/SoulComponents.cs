@@ -367,6 +367,65 @@ namespace CitizenSoul
         RitePrepOn = 348,        // F151: rehearsals, fittings, nerves
         RiteDoneOn = 349,        // F151: walked out of childhood
         ComingOfAgeOn = 350,     // F151: kept the old ways, their own way
+
+        // EP1: extended play (F20, F28-F29, F34, F37, F39-F41, F44-F46, F48-F51, F54, F59)
+        MortalityDeclineOn = 351, // F20: felt the years arrive
+        MortalityBucketDoneOn = 352, // F20: checked the last thing off
+        MortalityFarewellOn = 353, // F20: made the rounds, saying goodbye
+        MortalityEulogyOn = 354, // F20: was spoken of gently, at the end
+        StrikeWalkOn = 355, // F28: walked the picket line
+        StrikeSettleOn = 356, // F28: saw the strike settle
+        BetWinOn = 357, // F29: got lucky at the tables
+        JackpotOn = 358, // F29: hit it big
+        BetLossOn = 359, // F29: the house took it
+        UnderworldInOn = 360, // F34: took a job that doesn't exist
+        FavorCalledOn = 361, // F34: the favor came due
+        UnderworldOutOn = 362, // F34: walked away from the life
+        GraftRefusedOn = 363, // F37: turned the envelope down
+        GraftTakenOn = 364, // F37: pocketed what wasn't theirs
+        CleanHandsOn = 365, // F37: kept both hands clean
+        HauntFoundOn = 366, // F39: found a haunt
+        RoutineSetOn = 367, // F39: settled into a rhythm
+        RoutineBrokenOn = 368, // F39: the rhythm broke
+        DishMasteredOn = 369, // F40: mastered a dish
+        StallRunOn = 370, // F40: ran the market stall
+        FeastMateOn = 371, // F40: shared a table with a friend
+        FaithSeekOn = 372, // F41: went looking for something bigger
+        FaithFoundOn = 373, // F41: found something to believe in
+        FaithDoubtsOn = 374, // F41: the questions came back
+        FaithMournsOn = 375, // F41: grieved with the congregation
+        NightOutOn = 376, // F44: painted the town
+        LastCallOn = 377, // F44: closed the place down
+        FanFoundOn = 378, // F45: picked a side to live and die with
+        MatchDayOn = 379, // F45: had a matchday
+        RivalryOn = 380, // F45: started a rivalry over nothing
+        ColorsSwitched = 381, // F45: switched colors, no regrets
+        LookFoundOn = 382, // F46: found their look
+        StatementMadeOn = 383, // F46: made a statement
+        FestivalOn = 384, // F48: went to the festival
+        ParadeOn = 385, // F48: watched the parade go by
+        FeastOn = 386, // F48: sat down to the big feast
+        HostedOn = 387, // F48: played host for the holidays
+        BlockRootedOn = 388, // F49: put down roots on the block
+        BlockBannerOn = 389, // F49: hung the block's colors out
+        BlockPartyOn = 390, // F49: shut the street for a party
+        MovedAwayOn = 391, // F49: moved to the next street over
+        GossipSharedOn = 392, // F50: passed the news along
+        GossipBurnedOn = 393, // F50: the story got out
+        GossipRegretOn = 394, // F50: wished they'd said nothing
+        GossipMendedOn = 395, // F50: made it right over the fence
+        KnownForOn = 396, // F51: became known for something
+        LegendOn = 397, // F51: reached legend status
+        TarnishedOn = 398, // F51: the name took a knock
+        RedeemedOn = 399, // F51: earned the name back
+        MentorBondOn = 400, // F54: took on a student
+        LessonTaughtOn = 401, // F54: taught a lesson worth keeping
+        ProtegeWonOn = 402, // F54: watched the student win
+        CraftGiftedOn = 403, // F54: passed the tools onward
+        MentorPartedOn = 404, // F54: parted ways, proud
+        ChronicledOn = 405, // F59: made the city paper
+        FrontPageOn = 406, // F59: hit the front page
+        ObituaryOn = 407, // F59: the paper printed the last piece
         }
 
     /// <summary>Quirk bits packed into SoulPersonality.m_Quirk.</summary>

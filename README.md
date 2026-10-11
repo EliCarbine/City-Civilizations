@@ -4,7 +4,7 @@ Every citizen gets a persistent personality, memory, relationships, moods, skill
 life story you can follow. Friends drift apart, kids grow up, couples form and break,
 people get hurt, learn, grieve, and celebrate.
 
-**v1.0.0 (M6 Ship) — 151 features across 34 systems.**
+**v1.0.0 — 151 features across 51 systems (M0–M6 + EP1 City Life).**
 
 ## What it does
 - **Personality** — each citizen gets a generated temperament that biases daily life
@@ -27,7 +27,7 @@ people get hurt, learn, grieve, and celebrate.
 
 ## Repo layout
 ```
-Src/                 mod source (34 systems, components, core logic)
+Src/                 mod source (51 systems, components, core logic)
 lang/en-US.json      localization file that ships with the mod
 Properties/          PublishConfiguration.xml + store Thumbnail.png
 Tools/StubCheck/     offline compile-check harness (no game install needed)
@@ -53,5 +53,6 @@ PUBLISHING.md        Paradox Mods release checklist
 ## Status
 - **M0–M6 complete** — M6 Ship added the Paradox Mods publish config, options.ini,
   localization, and the perf gate.
-- **EP1 (City Life, ~12 features)** — planned post-ship: city-wide media, culture,
-  deep crime (see DESIGN.md roadmap).
+- **EP1 City Life complete** — 17 systems: mortality, strikes, gambling, organized crime,
+  corruption, routines, food, faith, nightlife, fandoms, fashion, holidays, neighborhood
+  character, gossip, reputation, mentorship, and the city chronicle.

@@ -9,7 +9,7 @@ instrumentation that keeps that verifiable in real cities, plus the ship-time ac
   reads, zero allocation in steady state.
 - Every 300 s (`SoulPerf.ReportEverySeconds`) the sampler emits one Info line and
   resets its window:
-  `perf/5min: total avg per pass 0.42ms across 34 systems; slowest: <top 6 with ms>`
+  `perf/5min: total avg per pass 0.42ms across 51 systems; slowest: <top 6 with ms>`
 - If the slowest system averages more than **4.0 ms/pass** (`SoulPerf.PerPassWarnMs`),
   a Warn line names it and points at the options.ini group to switch off.
 

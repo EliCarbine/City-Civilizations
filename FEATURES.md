@@ -248,5 +248,5 @@ Feature IDs map onto milestones (ordering follows dependency, not importance):
 - **M5 Depth & dynasties** — **F05–F07**, **F09**, **F10**, **F21–F25**, **F27**, **F30**,
   **F36**, **F38**, **F56**, **F57**, **F60**
 - **M6 Ship** — config toggles, localization, perf gate
-- **EP1 City Life** (post-ship) — **F20**, **F28**, **F29**, **F34**, **F37**, **F39–F41**,
+- **EP1 City Life** — **F20**, **F28**, **F29**, **F34**, **F37**, **F39–F41**,
   **F44–F46**, **F48–F51**, **F54**, **F59**
