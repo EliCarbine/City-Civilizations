@@ -25,6 +25,7 @@ namespace CitizenSoul
     {
         private EntityQuery m_Pending;
         private EntityQuery m_Config;
+        private bool m_AllSoulsLogged;
 
         protected override int Interval { get { return 2048; } } // 128 passes/day
         protected override int Lanes { get { return 1; } }       // whole-query budget, not lane-sliced
@@ -83,7 +84,11 @@ namespace CitizenSoul
                 stats.m_SoulsCreated += (uint)created;
                 em.SetComponentData(cfg, stats);
             }
-            if (pending.Length == 0) SoulLog.Once("init.done", "SoulInitializeSystem: all citizens have souls.");
+            if (!m_AllSoulsLogged && pending.Length == 0)
+            {
+                m_AllSoulsLogged = true;
+                SoulLog.Info("SoulInitializeSystem: all citizens have souls.");
+            }
             if (faults > 0) SoulLog.Warn("SoulInitializeSystem: " + faults + " fault(s), " + created + " created this pass.");
         }
 
