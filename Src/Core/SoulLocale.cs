@@ -85,6 +85,8 @@ namespace CitizenSoul
             s_Table[Prefix + "INSPECTOR_THERAPY"] = ", in therapy";
             s_Table[Prefix + "INSPECTOR_PET_FMT"] = "; companion kind {0} (bond {1})";
             s_Table[Prefix + "INSPECTOR_CONDITION_FMT"] = "; managing condition {0}";
+            s_Table[Prefix + "INSPECTOR_TV_FMT"] = "; keeps the box on for show #{0}";
+            s_Table[Prefix + "INSPECTOR_TV_NONE"] = "; watches the box, still deciding";
             s_Table[Prefix + "INSPECTOR_CRIME_FMT"] = "; notoriety {0}, convictions {1}";
             s_Table[Prefix + "INSPECTOR_SKILLS_FMT"] = "social {0}, fitness {1}, logic {2}, craft {3}";
         }

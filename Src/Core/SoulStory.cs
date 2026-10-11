@@ -426,7 +426,42 @@ case SoulEventKind.MentorPartedOn: return "parted ways, proud";
 case SoulEventKind.ChronicledOn: return "made the city paper";
 case SoulEventKind.FrontPageOn: return "hit the front page";
 case SoulEventKind.ObituaryOn: return "the paper printed the last piece";
-default: return "something stirred";
+                // EP2: the enterprise arc
+                case SoulEventKind.PaidOn: return "payday, regular as bread";
+                case SoulEventKind.TightMonthOn: return "watched the money run thin";
+                case SoulEventKind.WindfallOn: return "found money where none was";
+                case SoulEventKind.MishapOn: return "the month bit back";
+                case SoulEventKind.PickedUpOn: return "climbed back out of the lean";
+                case SoulEventKind.MilestoneOn: return "crossed a number worth crossing";
+                case SoulEventKind.OpenedOn: return "hung a sign with their name on it";
+                case SoulEventKind.FirstSaleOn: return "heard the first dollar hit the till";
+                case SoulEventKind.BusyOn: return "word got out";
+                case SoulEventKind.SlowOn: return "watched the street go quiet";
+                case SoulEventKind.HiredOn: return "put someone on the payroll";
+                case SoulEventKind.ToughCallOn: return "turned the sign around";
+                case SoulEventKind.IpoReadyOn: return "good enough, long enough";
+                case SoulEventKind.RangBellOn: return "rang the bell";
+                case SoulEventKind.DoubledOn: return "watched their stock double";
+                case SoulEventKind.SharesSlidOn: return "watched their stock slide to half";
+                case SoulEventKind.BoughtInOn: return "bought a piece of somebody's dream";
+                case SoulEventKind.CashedOutOn: return "took the win";
+                case SoulEventKind.RodeItDownOn: return "held on until it hurt";
+                case SoulEventKind.MarketCrashOn: return "saw red, everywhere, all at once";
+                case SoulEventKind.MarketRallyOn: return "watched the bull run through town";
+                case SoulEventKind.DividendOn: return "opened the envelope from the exchange";
+                case SoulEventKind.PremiereOn: return "watched a premiere";
+                case SoulEventKind.FoundShowOn: return "found THE show";
+                case SoulEventKind.CartoonYearsOn: return "grew up on Saturday cartoons";
+                case SoulEventKind.MadeTheNewsOn: return "ended up on the news";
+                case SoulEventKind.SawTheNewsOn: return "the news landed on them";
+                case SoulEventKind.CrossroadsOn: return "stood at the fork";
+                case SoulEventKind.ChoseTheRoadOn: return "picked a road";
+                case SoulEventKind.ReroutedOn: return "the road bent";
+                case SoulEventKind.DeferredOn: return "put the dream on the shelf";
+                case SoulEventKind.RisingOn: return "started coming up in the field";
+                case SoulEventKind.MadeTheTopOn: return "reached the top of the field";
+                case SoulEventKind.LateBloomOn: return "late to bloom, first to flower";
+                default: return "something stirred";
             }
         }
 
@@ -531,6 +566,15 @@ default: return "something stirred";
             {
                 SoulCrime c = em.GetComponentData<SoulCrime>(e);
                 if (c.m_Notoriety > 0 || c.m_Records > 0) details += SoulLocale.Fmt("INSPECTOR_CRIME_FMT", c.m_Notoriety, c.m_Records);
+            }
+            if (em.HasComponent<SoulViewer>(e))
+            {
+                SoulViewer sv = em.GetComponentData<SoulViewer>(e);
+                if ((sv.m_Flags & SoulViewerFlags.Watcher) != 0)
+                {
+                    if (sv.m_Favorite == 255) details += SoulLocale.Get("INSPECTOR_TV_NONE");
+                    else details += SoulLocale.Fmt("INSPECTOR_TV_FMT", sv.m_Favorite);
+                }
             }
             v.Details = details;
 

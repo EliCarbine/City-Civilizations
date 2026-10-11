@@ -81,9 +81,17 @@ namespace CitizenSoul
             updateSystem.UpdateAfter<MentorSystem, ReputationSystem>(SystemUpdatePhase.ModificationEnd);
             updateSystem.UpdateAfter<ChronicleSystem, MentorSystem>(SystemUpdatePhase.ModificationEnd);
 
+            // EP2: money, markets & the wider life (F166-F183)
+            updateSystem.UpdateAfter<FortuneSystem, ChronicleSystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<VentureSystem, FortuneSystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<PathSystem, VentureSystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<ExchangeSystem, PathSystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<BroadcastSystem, ExchangeSystem>(SystemUpdatePhase.ModificationEnd);
+            updateSystem.UpdateAfter<NewsroomSystem, BroadcastSystem>(SystemUpdatePhase.ModificationEnd);
+
             updateSystem.UpdateAt<SoulPanelUISystem>(SystemUpdatePhase.UIUpdate);
 
-            SoulLog.Info("Citizen Soul loaded: 51 systems registered.");
+            SoulLog.Info("Citizen Soul loaded: 57 systems registered.");
         }
 
         public void OnDispose()

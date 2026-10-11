@@ -426,6 +426,42 @@ namespace CitizenSoul
         ChronicledOn = 405, // F59: made the city paper
         FrontPageOn = 406, // F59: hit the front page
         ObituaryOn = 407, // F59: the paper printed the last piece
+
+        // EP2: the enterprise arc (F152-F184)
+        PaidOn = 408, // F152: payday, regular as bread
+        TightMonthOn = 409, // F153: the money ran thin
+        WindfallOn = 410, // F154: money from nowhere
+        MishapOn = 411, // F155: the month bit back
+        PickedUpOn = 412, // F153: climbed back out of the lean
+        MilestoneOn = 413, // F156: crossed a number worth crossing
+        OpenedOn = 414, // F157: hung a sign with their name on it
+        FirstSaleOn = 415, // F158: the first dollar hit the till
+        BusyOn = 416, // F160: word got out
+        SlowOn = 417, // F161: the street went quiet
+        HiredOn = 418, // F159: put someone on the payroll
+        ToughCallOn = 419, // F162: turned the sign around
+        IpoReadyOn = 420, // F163: good enough, long enough
+        RangBellOn = 421, // F163: rang the bell
+        DoubledOn = 422, // F164: the stock doubled since the bell
+        SharesSlidOn = 423, // F165: the stock slid to half
+        BoughtInOn = 424, // F170: bought a piece of somebody's dream
+        CashedOutOn = 425, // F171: took the win
+        RodeItDownOn = 426, // F174: held on until it hurt
+        MarketCrashOn = 427, // F175: red, everywhere, all at once
+        MarketRallyOn = 428, // F176: the bull ran through town
+        DividendOn = 429, // F172: the envelope from the exchange
+        PremiereOn = 430, // F179: watched a premiere
+        FoundShowOn = 431, // F181: found THE show
+        CartoonYearsOn = 432, // F182: grew up on Saturday cartoons
+        MadeTheNewsOn = 433, // F183: ended up on the news
+        SawTheNewsOn = 434, // F183: the news landed on them
+        CrossroadsOn = 435, // F184: stood at the fork
+        ChoseTheRoadOn = 436, // F184: picked a road
+        ReroutedOn = 437, // F184: the road bent
+        DeferredOn = 438, // F184: the dream on the shelf
+        RisingOn = 439, // F184: coming up in the field
+        MadeTheTopOn = 440, // F184: top of the field
+        LateBloomOn = 441, // F184: late to bloom, first to flower
         }
 
     /// <summary>Quirk bits packed into SoulPersonality.m_Quirk.</summary>
