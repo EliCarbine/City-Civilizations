@@ -336,6 +336,37 @@ namespace CitizenSoul
         SessionOn = 317,         // F141: rolled dice with the regulars
         DMRoleOn = 318,          // F141: took the chair behind the screen
         FinaleOn = 319,          // F141: ended the campaign the right way
+        DriversEdOn = 320,       // F142: signed up and stalled twice
+        LicenseOn = 321,         // F142: passed, at last
+        MovingDayOn = 322,       // F143: carried their life up the stairs
+        HousewarmingOn = 323,    // F143: fed the whole floor
+        NoodleEraOn = 324,       // F143: noodles on the floor, no regrets
+        NearDropoutOn = 325,     // F144: nearly walked, stayed
+        GraduationOn = 326,      // F144: the walk across the stage
+        PrideWaveOn = 327,       // F144: a wave of their own colors
+        FirstPaycheckOn = 328,   // F145: ripped open the first envelope
+        PromotionToastOn = 329,  // F145: raised a glass at the news
+        RetirementWatchOn = 330, // F145: counted down to the last shift
+        PlaquePartyOn = 331,     // F145: the plaque over the counter
+        FirstDinnerOn = 332,     // F146: dinner at the first real table
+        RenovationOn = 333,      // F146: walls down, dust up
+        RenoDoneOn = 334,        // F146: the place, in their colors
+        FirstBloomOn = 335,      // F146: first leaves on the sill
+        ResolutionOn = 336,      // F147: said it out loud this year
+        ResolutionKeptOn = 337,  // F147: actually kept it
+        GymCrowdOn = 338,        // F147: showed up when it mattered
+        FoundingDayOn = 339,     // F148: the town remembered founding
+        BridgeDayOn = 340,       // F148: stood on the bridge at dusk
+        LocalPrideOn = 341,      // F148: love for the place they chose
+        SendOffOn = 342,         // F149: saw someone off at the edge
+        StationRunOn = 343,      // F149: the run to the station, one last time
+        LetterFollowOn = 344,    // F149: a letter from the road
+        ReunionPlanOn = 345,     // F150: someone said it out loud
+        ReunionNightOn = 346,    // F150: the night everyone came back
+        RekindleOn = 347,        // F150: an old spark, relit
+        RitePrepOn = 348,        // F151: rehearsals, fittings, nerves
+        RiteDoneOn = 349,        // F151: walked out of childhood
+        ComingOfAgeOn = 350,     // F151: kept the old ways, their own way
         }
 
     /// <summary>Quirk bits packed into SoulPersonality.m_Quirk.</summary>
