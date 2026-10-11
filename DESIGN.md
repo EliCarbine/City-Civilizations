@@ -7,6 +7,8 @@ rivalries, injuries, fights, and a life story — evolved daily by the sim and s
 **Feature catalog: FEATURES.md + FEATURES-2.md — the full roster: 151 features across 17 themes, all
 emergent from six shared engines, mapped to milestones.**
 
+EP2 (money & markets) extends the roster — wallets and wages, ventures, the stock exchange, broadcast, the newsroom, and life paths — cataloged in code for now.
+
 Consolidated one-file list: `Citizen-Soul-Feature-List.md`.
 
 ---

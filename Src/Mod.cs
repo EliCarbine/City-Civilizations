@@ -81,7 +81,7 @@ namespace CitizenSoul
             updateSystem.UpdateAfter<MentorSystem, ReputationSystem>(SystemUpdatePhase.ModificationEnd);
             updateSystem.UpdateAfter<ChronicleSystem, MentorSystem>(SystemUpdatePhase.ModificationEnd);
 
-            // EP2: money, markets & the wider life (F166-F183)
+            // EP2: money, markets & the wider life (F152-F198)
             updateSystem.UpdateAfter<FortuneSystem, ChronicleSystem>(SystemUpdatePhase.ModificationEnd);
             updateSystem.UpdateAfter<VentureSystem, FortuneSystem>(SystemUpdatePhase.ModificationEnd);
             updateSystem.UpdateAfter<PathSystem, VentureSystem>(SystemUpdatePhase.ModificationEnd);

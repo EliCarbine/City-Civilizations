@@ -131,6 +131,9 @@ namespace CitizenSoul
             Map("civic", "HoodSystem");
             Map("social", "GossipSystem", "ReputationSystem", "NightlifeSystem");
             Map("media", "ChronicleSystem");
+            // EP2 (money & markets): fortune, ventures, the exchange, broadcast, the newsroom, paths.
+            Map("work", "FortuneSystem", "VentureSystem", "PathSystem", "ExchangeSystem");
+            Map("media", "BroadcastSystem", "NewsroomSystem");
         }
 
         private static void Map(string group, params string[] systems)

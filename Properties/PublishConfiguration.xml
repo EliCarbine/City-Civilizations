@@ -16,8 +16,9 @@ Give your city a soul. Citizen Soul layers a full simulated inner life on top of
 * Skills (social, fitness, logic, craft) that grow from daily learning
 * Injuries and recovery, fights, therapy, bad habits, and fresh starts
 * Pets, hobbies, city quirks, coming-of-age rituals, and milestones from first school day to old age
+* Money and markets — wallets, wages, shopkeeping ventures, and a living stock exchange with crashes, rallies, and dividends
 * A diary you can actually read — follow any citizen and watch their story unfold
-* City-wide life — holidays and seasons, nightlife, fandoms, fashion, food culture, faith, neighborhood character, gossip, reputation, and a city chronicle
+* City-wide life — holidays and seasons, nightlife, fandoms, fashion, food culture, faith, neighborhood character, gossip, reputation, a city chronicle, a TV broadcast lineup, and a city newsroom
 
 **Player tools**
 * Follow panel — pick a citizen and watch their life in real time
@@ -45,7 +46,7 @@ Make your city feel human.
 	<!--Recommended version of the base game to use the mod-->
 	<GameVersion Value="1.1.*" />
 	<!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
-	<ChangeLog Value="First public release — 151 features across 51 systems: personality, social life, romance and family, mind and mood, crime and justice, work, culture, media, rituals, companions, diary and panels. Includes the EP1 City Life expansion — mortality, strikes, gambling, organized crime, corruption, routines, food, faith, nightlife, fandoms, fashion, holidays, neighborhood character, gossip, reputation, mentorship, and the city chronicle — plus options.ini config, localization, and the 5-minute perf report." />
+	<ChangeLog Value="First public release — 188 features across 57 systems: personality, social life, romance and family, mind and mood, crime and justice, work, culture, media, rituals, companions, diary and panels. Includes the EP1 City Life expansion — mortality, strikes, gambling, organized crime, corruption, routines, food, faith, nightlife, fandoms, fashion, holidays, neighborhood character, gossip, reputation, mentorship, and the city chronicle — and EP2 money &amp; markets: wallets and wages, shopkeeping ventures, a living stock exchange with crashes, rallies and dividends, a TV broadcast lineup, a city newsroom, and life paths from school years to the top of a field — plus options.ini config, localization, and the 5-minute perf report." />
 	<!--External link. supported types are discord, github, youtube, twitch, x, paypal, patreon-->
 	<ExternalLink Type="github" Url="https://github.com/EliCarbine/City-Civilizations" />
 </Publish>

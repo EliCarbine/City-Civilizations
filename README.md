@@ -4,7 +4,7 @@ Every citizen gets a persistent personality, memory, relationships, moods, skill
 life story you can follow. Friends drift apart, kids grow up, couples form and break,
 people get hurt, learn, grieve, and celebrate.
 
-**v1.0.0 — 151 features across 51 systems (M0–M6 + EP1 City Life).**
+**v1.0.0 — 188 features across 57 systems (M0–M6 + EP1 City Life + EP2 Money & Markets).**
 
 ## What it does
 - **Personality** — each citizen gets a generated temperament that biases daily life
@@ -13,9 +13,10 @@ people get hurt, learn, grieve, and celebrate.
 - **Mind & mood** — moods, trauma, therapy, chronic conditions, addiction and recovery
 - **Crime & justice** — street life, notoriety, convictions, reentry
 - **Work, culture, sports, curiosity, civic life** — hobbies, arts, tech, nature
+- **Money & markets** — wallets, wages, ventures, and a living stock exchange
 - **Companions** — pets with bonded names you can see in the inspector
 - **Rituals & milestones** — first school day, coming of age, weddings, old age
-- **Media** — city media, and a diary you can read from the follow panel
+- **Media** — city media, TV broadcasts, a newsroom, and a diary you can read from the follow panel
 
 ## Player tools
 - **Follow panel / inspector** — pick any citizen; read mood, ties, skills, recent events
@@ -27,15 +28,16 @@ people get hurt, learn, grieve, and celebrate.
 
 ## Repo layout
 ```
-Src/                 mod source (51 systems, components, core logic)
+Src/                 mod source (57 systems, components, core logic)
 lang/en-US.json      localization file that ships with the mod
 Properties/          PublishConfiguration.xml + store Thumbnail.png
 Tools/StubCheck/     offline compile-check harness (no game install needed)
+Tools/Publish.ps1    Windows one-shot: build + stage + launch ModPublisher
 Tools/make_thumbnail.py   regenerates the store thumbnail
 DESIGN.md            architecture, persistence plan, roadmap
 FEATURES.md          feature catalog part I (F01–F61)
 FEATURES-2.md        feature catalog part II (F62–F151) + addenda
-Citizen-Soul-Feature-List.md   consolidated catalog (all 151)
+Citizen-Soul-Feature-List.md   consolidated catalog (F1–F151; EP2 annotated in code)
 PERF.md              performance gate: measurement, acceptance, tuning
 PUBLISHING.md        Paradox Mods release checklist
 ```
@@ -48,7 +50,8 @@ PUBLISHING.md        Paradox Mods release checklist
   (ships `lang/` next to the dll per the csproj copy rule)
 - **Deploy:** toolchain local mods folder; the game creates `options.ini` there on
   first load.
-- **Publish:** see PUBLISHING.md.
+- **Publish:** see PUBLISHING.md, or on Windows run `Tools/Publish.ps1`
+  (auto-detects the game, builds Release, stages `dist\CitizenSoul`, launches ModPublisher).
 
 ## Status
 - **M0–M6 complete** — M6 Ship added the Paradox Mods publish config, options.ini,
@@ -56,3 +59,6 @@ PUBLISHING.md        Paradox Mods release checklist
 - **EP1 City Life complete** — 17 systems: mortality, strikes, gambling, organized crime,
   corruption, routines, food, faith, nightlife, fandoms, fashion, holidays, neighborhood
   character, gossip, reputation, mentorship, and the city chronicle.
+- **EP2 Money & Markets complete** — 6 systems: fortune (wallets, wages, luck), ventures
+  (shopkeeping), the exchange (a living stock market), broadcast (TV lineup), the
+  newsroom, and life paths from school years to the top of the field.
