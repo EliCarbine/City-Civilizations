@@ -44,7 +44,7 @@ Make your city feel human.
 	<!--Version of the mod-->
 	<ModVersion Value="1.0.0" />
 	<!--Recommended version of the base game to use the mod-->
-	<GameVersion Value="1.1.*" />
+	<GameVersion Value="1.6.*" />
 	<!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
 	<ChangeLog Value="First public release — 188 features across 57 systems: personality, social life, romance and family, mind and mood, crime and justice, work, culture, media, rituals, companions, diary and panels. Includes the EP1 City Life expansion — mortality, strikes, gambling, organized crime, corruption, routines, food, faith, nightlife, fandoms, fashion, holidays, neighborhood character, gossip, reputation, mentorship, and the city chronicle — and EP2 money &amp; markets: wallets and wages, shopkeeping ventures, a living stock exchange with crashes, rallies and dividends, a TV broadcast lineup, a city newsroom, and life paths from school years to the top of a field — plus options.ini config, localization, and the 5-minute perf report." />
 	<!--External link. supported types are discord, github, youtube, twitch, x, paypal, patreon-->

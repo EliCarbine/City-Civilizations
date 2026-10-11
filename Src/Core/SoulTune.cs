@@ -996,7 +996,7 @@ namespace CitizenSoul
         /// <summary>Applies a mood impulse; consolidation spends impulses once per day.</summary>
         public static void Pulse(EntityManager em, Entity e, int delta)
         {
-            if (delta == 0) return;
+            if (delta == 0 || !em.HasComponent<Mood>(e)) return;
             Mood m = em.GetComponentData<Mood>(e);
             m.m_Impulse = SoulMath.ToSbyte(SoulMath.Clamp(m.m_Impulse + delta, SoulConsts.MoodMin, SoulConsts.MoodMax));
             em.SetComponentData(e, m);
@@ -1005,6 +1005,9 @@ namespace CitizenSoul
         /// <summary>Writes one event to both the memory ring and the journal (dual-write invariant).</summary>
         public static void Note(EntityManager em, Entity e, uint day, SoulEventKind kind, short value, Entity about)
         {
+            // Souls own both buffers. A non-soul (e.g. a scoop about a citizen
+            // whose soul has not migrated yet) is a no-op, not a GetBuffer crash.
+            if (!em.HasBuffer<SoulMemory>(e) || !em.HasBuffer<SoulJournalEntry>(e)) return;
             SoulMemUtil.Push(em.GetBuffer<SoulMemory>(e), day, kind, value, about);
             SoulMemUtil.PushJournal(em.GetBuffer<SoulJournalEntry>(e), day, kind, value, about);
         }
