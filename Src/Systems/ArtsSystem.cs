@@ -263,13 +263,15 @@ namespace CitizenSoul
                         if (em.HasComponent<SoulPersonality>(e)) neuroticism = em.GetComponentData<SoulPersonality>(e).m_Neuroticism;
                         if (neuroticism >= (byte)SoulTune.BandBreakupNeuroticism && Roll(day, salt + 23u, 1000u) < (uint)SoulTune.BandBreakupPerMille)
                         {
-                            Entity mate = em.GetComponentData<SoulBand>(e).m_Mate;
+                            SoulBand band = em.GetComponentData<SoulBand>(e);
+                            Entity mate = band.m_Mate;
+                            short together = (short)Math.Min(day - band.m_FormedDay, 32000u);
                             em.RemoveComponent<SoulBand>(e);
                             if (em.HasComponent<SoulBand>(mate)) em.RemoveComponent<SoulBand>(mate);
                             a.m_Flags &= ~SoulArtsFlags.Banded;
                             a.m_Partner = Entity.Null;
-                            SoulFeel.Note(em, e, day, SoulEventKind.BandBreakup, 1, mate);
-                            SoulFeel.Note(em, mate, day, SoulEventKind.BandBreakup, 1, e);
+                            SoulFeel.Note(em, e, day, SoulEventKind.BandBreakup, together, mate);
+                            SoulFeel.Note(em, mate, day, SoulEventKind.BandBreakup, together, e);
                             SoulFeel.Pulse(em, e, SoulTune.BandBreakupMood);
                         }
                     }

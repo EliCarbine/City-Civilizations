@@ -341,10 +341,11 @@ namespace CitizenSoul
             }
 
             // B. Home: the signature dish. Street: the standing order.
+            uint signatureOdds = (c.m_Flags & SoulPalateFlags.HomeCook) != 0 ? (uint)DishPerMille : (uint)StreetStallPerMille;
             if (((c.m_Flags & SoulPalateFlags.HomeCook) != 0 || (c.m_Flags & SoulPalateFlags.StreetFan) != 0) &&
                 (c.m_Flags & SoulPalateFlags.Signature) == 0 &&
                 (day + salt) % 9u == 0u &&
-                SoulEp1Util.Roll(day, salt + 4003u, 1000u) < DishPerMille)
+                SoulEp1Util.Roll(day, salt + 4003u, 1000u) < signatureOdds)
             {
                 c.m_Flags |= SoulPalateFlags.Signature;
                 if ((c.m_Flags & SoulPalateFlags.HomeCook) != 0)
@@ -535,6 +536,7 @@ namespace CitizenSoul
                 day >= c.m_SeekDay + FoundDelayDays)
             {
                 c.m_Flags |= SoulFaithFlags.Converted;
+                c.m_Flags |= SoulFaithFlags.Praying;
                 c.m_ConvertDay = day;
                 SoulFeel.Note(em, e, day, SoulEventKind.FaithFoundOn, 1, e);
                 SoulFeel.Pulse(em, e, 3);
@@ -543,6 +545,7 @@ namespace CitizenSoul
             // C. The doubt -- a cold night of the soul, now and then.
             if ((c.m_Flags & SoulFaithFlags.Converted) != 0 &&
                 (c.m_Flags & SoulFaithFlags.Doubting) == 0 &&
+                (c.m_Flags & SoulFaithFlags.Devout) == 0 &&
                 (day + salt) % 211u == 0u &&
                 SoulEp1Util.Roll(day, salt + 4103u, 1000u) < DoubtPerMille)
             {
@@ -554,10 +557,12 @@ namespace CitizenSoul
 
             // D. The return: doubt weathered, not erased. The seat is warmer.
             if ((c.m_Flags & SoulFaithFlags.Doubting) != 0 &&
+                (c.m_Flags & SoulFaithFlags.Praying) != 0 &&
                 (day + salt) % 89u == 0u &&
                 SoulEp1Util.Roll(day, salt + 4104u, 1000u) < ReaffirmPerMille)
             {
                 c.m_Flags &= unchecked((byte)~SoulFaithFlags.Doubting);
+                c.m_Flags |= SoulFaithFlags.Devout;
                 SoulFeel.Note(em, e, day, SoulEventKind.FaithFoundOn, 2, e);
                 SoulFeel.Pulse(em, e, 2);
             }

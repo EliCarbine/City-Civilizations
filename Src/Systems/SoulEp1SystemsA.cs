@@ -585,7 +585,7 @@ namespace CitizenSoul
                         SoulFeel.Pulse(em, e, 8);
                     }
                 }
-                else
+                else if (draw < BaseWinChancePerMille + LossPerMille)
                 {
                     c.m_Streak = 0;
                     c.m_LossDay = day;

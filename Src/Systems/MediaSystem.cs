@@ -172,6 +172,12 @@ namespace CitizenSoul
                 SoulFeel.Note(em, e, day, SoulEventKind.RewatchOn, 1, e);
                 SoulFeel.Pulse(em, e, SoulTune.MediaRewatchMood);
             }
+            else if (adult && (c.m_Flags & SoulMediaFlags.Rewatcher) != 0 &&
+                (day + salt) % 30u == 0u &&
+                Roll(day, salt + 448u, 1000u) < (uint)SoulTune.MediaRewatchPerMille)
+            {
+                SoulFeel.Pulse(em, e, SoulTune.MediaRewatchGloomMax);
+            }
             if (adult && (c.m_Flags & SoulMediaFlags.Cliffhanger) == 0 &&
                 (c.m_Flags & SoulMediaFlags.MustWatch) != 0 &&
                 (day + salt) % 21u == 0u &&
@@ -320,7 +326,9 @@ namespace CitizenSoul
             if (adult && (day + salt) % 45u == 0u &&
                 Roll(day, salt + 436u, 1000u) < (uint)SoulTune.MediaShopRadioPerMille)
             {
-                SoulFeel.Note(em, e, day, SoulEventKind.ShopRadioOn, 1, e);
+                bool hummed = (c.m_Flags2 & SoulMediaFlags2.ShopRadio) != 0;
+                c.m_Flags2 |= SoulMediaFlags2.ShopRadio;
+                SoulFeel.Note(em, e, day, SoulEventKind.ShopRadioOn, (short)(hummed ? 2 : 1), e);
                 SoulFeel.Pulse(em, e, SoulTune.MediaShopRadioMood);
             }
             if (adult && (c.m_Flags2 & SoulMediaFlags2.Announcer) == 0 &&

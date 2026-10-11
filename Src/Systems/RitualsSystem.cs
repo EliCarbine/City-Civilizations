@@ -421,6 +421,7 @@ namespace CitizenSoul
                 day >= c.m_ReunionDay)
             {
                 c.m_Flags3 = (byte)(c.m_Flags3 | SoulRitualFlags3.ReunionNight);
+                c.m_ReunionMate = c.m_SendMate;
                 SoulFeel.Note(em, e, day, SoulEventKind.ReunionNightOn, 1, c.m_SendMate);
                 SoulFeel.Pulse(em, e, SoulTune.RitualReunionMood);
                 BumpBoth(em, e, c.m_SendMate, SoulTune.RitualReunionBump);
@@ -430,9 +431,9 @@ namespace CitizenSoul
                 Roll(day, salt + 682u, 1000u) < (uint)SoulTune.RitualRekindlePerMille)
             {
                 c.m_Flags3 = (byte)(c.m_Flags3 | SoulRitualFlags3.Rekindled);
-                SoulFeel.Note(em, e, day, SoulEventKind.RekindleOn, 1, c.m_SendMate);
+                SoulFeel.Note(em, e, day, SoulEventKind.RekindleOn, 1, c.m_ReunionMate);
                 SoulFeel.Pulse(em, e, SoulTune.RitualRekindleMood);
-                BumpBoth(em, e, c.m_SendMate, SoulTune.RitualRekindleBump);
+                BumpBoth(em, e, c.m_ReunionMate, SoulTune.RitualRekindleBump);
             }
 
             // ---- F151: the rite (prep, the walk, the keeping) ----

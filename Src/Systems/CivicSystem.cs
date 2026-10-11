@@ -215,8 +215,8 @@ namespace CitizenSoul
             }
             if ((c.m_Flags & SoulCivicFlags.Gardener) != 0 && (day + salt) % 90u == 0u)
             {
-                uint pick = Roll(day, salt + 29u, 100u);
-                if (pick < 25u)
+                uint pick = Roll(day, salt + 29u, 1000u);
+                if (pick < (uint)SoulTune.CivicTomatoPerMille)
                 {
                     if (c.m_Mate != Entity.Null && em.Exists(c.m_Mate))
                     {
@@ -226,7 +226,7 @@ namespace CitizenSoul
                         SoulFeel.Pulse(em, e, SoulTune.CivicTomatoMood);
                     }
                 }
-                else if (pick < 55u)
+                else if (pick < 550u)
                 {
                     SoulFeel.Note(em, e, day, SoulEventKind.HarvestShare, 1, e);
                     SoulFeel.Pulse(em, e, SoulTune.CivicHarvestMood);

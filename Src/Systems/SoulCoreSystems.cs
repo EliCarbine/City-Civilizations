@@ -241,6 +241,10 @@ namespace CitizenSoul
                 {
                     if (SoulRules.SkillAddXp(ref s.m_Social, SoulTune.QuirkXpBonus, out level)) Celebrate(em, e, day, level);
                 }
+                if (SoulQuirks.Has(p.m_Quirk, SoulQuirks.Tidy))
+                {
+                    if (SoulRules.SkillAddXp(ref s.m_Craft, SoulTune.QuirkXpBonus, out level)) Celebrate(em, e, day, level);
+                }
             }
             em.SetComponentData(e, s);
         }

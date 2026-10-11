@@ -193,6 +193,10 @@ namespace CitizenSoul
                 SoulFeel.Pulse(em, a, SoulTune.FalloutMood);
                 SoulFeel.Note(em, a, day, SoulEventKind.FellOut, affA, b);
             }
+            if ((chA & SoulTune.ChangeClose) != 0)
+            {
+                SoulFeel.Pulse(em, a, SoulTune.FirstCloseMood);
+            }
             if ((chA & SoulTune.ChangeRival) != 0)
             {
                 SoulFeel.Pulse(em, a, SoulTune.RivalMood);
@@ -208,6 +212,10 @@ namespace CitizenSoul
             {
                 SoulFeel.Pulse(em, b, SoulTune.FalloutMood);
                 SoulFeel.Note(em, b, day, SoulEventKind.FellOut, affB, a);
+            }
+            if ((chB & SoulTune.ChangeClose) != 0)
+            {
+                SoulFeel.Pulse(em, b, SoulTune.FirstCloseMood);
             }
             if ((chB & SoulTune.ChangeRival) != 0)
             {
@@ -418,6 +426,12 @@ namespace CitizenSoul
                 Entity loser = outcome == 1 ? b : a;
                 SoulFeel.Pulse(em, winner, SoulTune.FightWinMood);
                 SoulFeel.Pulse(em, loser, SoulTune.FightLossMood);
+                if (em.HasComponent<SoulMind>(loser))
+                {
+                    SoulMind mind = em.GetComponentData<SoulMind>(loser);
+                    mind.m_Trauma = (byte)Math.Min(255, mind.m_Trauma + SoulTune.TraumatizedByViolence);
+                    em.SetComponentData(loser, mind);
+                }
                 if (rngB.NextInt(0, 100) < SoulTune.InjuryChancePercent)
                 {
                     Injure(em, loser, day, winner, 1 + rngB.NextInt(0, 2), ref injured);

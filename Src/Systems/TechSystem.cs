@@ -240,8 +240,8 @@ namespace CitizenSoul
             }
             if ((t.m_Flags & SoulTechFlags.Binger) != 0 && (day + salt) % 30u == 0u)
             {
-                uint pick = Roll(day, salt + 29u, 100u);
-                if (pick < 20u)
+                uint pick = Roll(day, salt + 29u, 1000u);
+                if (pick < 200u)
                 {
                     Entity mate = FindFriend(em, e, SoulTune.CurioPartnerMinAffinity);
                     SoulFeel.Note(em, e, day, SoulEventKind.WatchParty, 1, mate);
@@ -252,7 +252,7 @@ namespace CitizenSoul
                         SoulFeel.Note(em, mate, day, SoulEventKind.WatchParty, 1, e);
                     }
                 }
-                else if (pick < 30u)
+                else if (pick < 200u + (uint)SoulTune.TechSpoilerPerMille)
                 {
                     Entity mate = FindFriend(em, e, SoulTune.CurioPartnerMinAffinity);
                     if (mate != Entity.Null)

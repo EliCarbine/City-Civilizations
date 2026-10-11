@@ -302,7 +302,15 @@ namespace CitizenSoul
             {
                 if (Roll(day, salt + 61u, 100000u) < SoulTune.ChronicRoll)
                 {
-                    ch.m_Kind = (byte)(1 + Roll(day, salt + 62u, 5u));
+                    uint kindPick = Roll(day, salt + 62u, 5u);
+                    switch (kindPick)
+                    {
+                        case 0u: ch.m_Kind = SoulChronic.KindAsthma; break;
+                        case 1u: ch.m_Kind = SoulChronic.KindArthritis; break;
+                        case 2u: ch.m_Kind = SoulChronic.KindHypertension; break;
+                        case 3u: ch.m_Kind = SoulChronic.KindDiabetes; break;
+                        default: ch.m_Kind = SoulChronic.KindVisionLoss; break;
+                    }
                     ch.m_Severity = (byte)(1 + Roll(day, salt + 63u, 3u));
                     ch.m_DxDay = day;
                     ch.m_LastRoutineDay = day;

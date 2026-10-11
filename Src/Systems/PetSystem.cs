@@ -74,7 +74,7 @@ namespace CitizenSoul
                 int edges = em.HasBuffer<SoulEdge>(e) ? em.GetBuffer<SoulEdge>(e).Length : 0;
                 if (edges <= SoulTune.PetLonelyEdges && Roll(day, salt + 111u, 1000u) < SoulTune.PetAdoptPerMille)
                 {
-                    pet.m_Kind = (byte)(1 + Roll(day, salt + 112u, 3u));
+                    pet.m_Kind = (byte)(SoulPet.KindDog + Roll(day, salt + 112u, (uint)(SoulPet.KindBird - SoulPet.KindDog + 1)));
                     pet.m_AdoptDay = day;
                     pet.m_Bond = 0;
                     pet.m_LastComfortDay = day;
