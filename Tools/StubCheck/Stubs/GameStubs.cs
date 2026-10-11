@@ -30,7 +30,7 @@ namespace Game
     public abstract class GameSystemBase : SystemBase
     {
         /// <summary>Update interval in frames; 0 means every frame.</summary>
-        protected virtual int GetUpdateInterval(SystemUpdatePhase phase)
+        public virtual int GetUpdateInterval(SystemUpdatePhase phase)
         {
             return 0;
         }

@@ -32,7 +32,7 @@ namespace CitizenSoul
 
         protected bool IsDisabled { get { return _disabled; } }
 
-        protected override int GetUpdateInterval(SystemUpdatePhase phase)
+        public override int GetUpdateInterval(SystemUpdatePhase phase)
         {
             return Interval;
         }

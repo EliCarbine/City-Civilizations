@@ -45,4 +45,23 @@
     <!-- Dev-only: Tools/StubCheck is an offline compile-check harness, not shipped with the mod. -->
     <Compile Remove="Tools/**/*.cs" />
   </ItemGroup>
+  <!-- Game/engine assemblies needed for Windows build (Unity.Collections, Unity.Mathematics, UnityEngine, Colossal.UI) -->
+  <PropertyGroup>
+    <GameDir Condition="'$(GameDir)' == ''">C:\Program Files (x86)\Steam\steamapps\common\Cities Skylines II</GameDir>
+    <GameManagedDir Condition="'$(GameManagedDir)' == ''">$(GameDir)\Cities2_Data\Managed</GameManagedDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="$(GameManagedDir)\Unity.Collections.dll">
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="$(GameManagedDir)\Unity.Mathematics.dll">
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="$(GameManagedDir)\UnityEngine.CoreModule.dll">
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="$(GameManagedDir)\Colossal.UI*.dll">
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
 </Project>
