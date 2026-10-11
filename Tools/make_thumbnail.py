@@ -60,8 +60,8 @@ def center(text, font, y, fill):
 
 center("CITIZEN", load_font(62), 84, (240, 240, 250))
 center("SOUL", load_font(62), 152, (255, 122, 89))
-center("Every citizen is a real person", load_font(23), 356, (205, 210, 230))
-center("a Cities: Skylines II mod", load_font(21), 430, (198, 203, 226))
+center("Every citizen is a real person", load_font(26), 352, (208, 212, 234))
+center("a Cities: Skylines II mod", load_font(23), 428, (176, 181, 208))
 
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
 img.save(OUT)
