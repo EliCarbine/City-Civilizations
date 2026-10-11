@@ -93,7 +93,7 @@ namespace CitizenSoul
 
         private static void TryFile()
         {
-            string dir = Path.Combine(Path.GetDirectoryName(typeof(SoulLocale).Assembly.Location) ?? ".", "lang");
+            string dir = Path.Combine(SoulPaths.ModDir() ?? ".", "lang");
             string culture = "";
             try { culture = CultureInfo.CurrentUICulture.Name; } catch { }
             string two = culture.Length >= 2 ? culture.Substring(0, 2) : "";

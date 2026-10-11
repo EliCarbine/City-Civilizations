@@ -145,7 +145,7 @@ namespace CitizenSoul
         {
             try
             {
-                string dir = Path.GetDirectoryName(typeof(SoulOptions).Assembly.Location);
+                string dir = SoulPaths.ModDir();
                 if (string.IsNullOrEmpty(dir)) dir = ".";
                 return Path.Combine(dir, "options.ini");
             }
