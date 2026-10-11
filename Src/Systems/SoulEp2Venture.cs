@@ -158,6 +158,7 @@ namespace CitizenSoul
                 }
                 if (c.m_GoodDays == 60 && Gate(ref w, day))
                 {
+                    SoulFeel.Note(em, e, day, SoulEventKind.BusyOn, (short)c.m_GoodDays, e);
                     SoulFeel.Pulse(em, e, 3);
                     Scoop(em, SoulWire.Venture, 2, 2, e, day);
                 }
